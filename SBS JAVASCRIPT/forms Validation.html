@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=viewport" content="width=h, initial-scale=1.0">
+    <title>Signup Form</title>
+
+    <style>
+        body{
+        background: #f4f4f9;
+        padding: 20px;
+        }
+        .form-container{
+        padding: 20px 30px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px;
+        width: 300px;
+        }
+        .form-container h2{
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        }
+        label{
+        font-size: 14px;
+        color: #555;
+        }
+        input{
+        padding: 10px;
+        width: 100%;
+        margin: 8px 0 16px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border 0.3s;
+        }
+        input:focus{
+        border-color: #007bff;
+        outline: none;
+        }
+        button{
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+        }
+        button:hover{
+        background-color: #0056b6b3;
+        }
+        .error{
+        color: red;
+        font-size: 13px;
+        margin-bottom: 10px;
+        }
+        .success{
+        color: green;
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+   <h1>Forms & Validation with HTML + CSS + JS</h1> 
+   <div class="form-container">
+    <h2>Signup Form</h2>
+    <form action="#" id="SignupForm">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"
+            placeholder="Enter Username" required>
+            <div class="error" id="usernameError" ></div>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+            placeholder="Enter Email" required>
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+            placeholder="Enter Password" required>
+            <div class="error" id="passwordError"></div>
+        </div>
+
+        <button type="submit">Signup</button>
+        <div id="successMsg" class="success"></div>
+    </form>
+   </div>
+
+   <script>
+    const form = document.getElementById("SignupForm");
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+
+    const usernameError = document.getElementById("usernameError")
+    const emailError = document.getElementById("emailError")
+    const passwordError = document.getElementById("passwordError")
+    const successMsg = document.getElementById("successMsg")
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault() // stops page refresh
+        let isValid = true;
+
+        // Clear errors
+        usernameError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
+        successMsg.textContent = "";
+
+        // Username Validation
+        if (username.value.trim().length < 3) {
+            usernameError.textContent = "Username must be atleast 3 characters"
+            isValid = false;
+        }
+
+        // Email Validation
+        const emailPattern = /^[^]+@[^]+\.[a-z]{2,3}$/;
+        if (!email.value.match(emailPattern)) {
+            emailError.textContent = "Please Enter a Valid email"
+            isValid = false;
+        };
+
+        // Password Validation
+        if (password.value.length < 6) {
+            passwordError.textContent = "Password must be atleast 6 characters";
+            isValid = false;
+        };
+
+        // if all good 
+        if (isValid) {
+            successMsg.textContent = "Signup Successfull! 🎉 "
+            form.reset();
+        }
+    });
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript Function</h1>
+    <p>A function is a reusable block of code designed to perform a 
+        specific task. <br> Instead of repeating code you can just called
+        the function whenever you need it. <br>Functions are designed to perform
+        to perform a particular task. <br> Functions execute when they are called.
+    </p>
+
+    <h2>Types of Function</h2>
+    <ol>
+        <li>Named Function &rarr; This is the most common typew. <br>It has a name
+        and can be called anywhere after it's declared.</li>
+        <li>Anonymous Function &rarr; A function without a name often used inside 
+            variables of other functions.
+        </li>
+        <li>Function Expression &rarr; It's a function assigned to a variable 
+            (can be named or Anonymous).</li>
+        <li>Arrow function &rarr; A shorter and cleaner way to write functions.</li>
+        <li>Immediately Invoked Function Expression (IIFE)</li>
+        <li>Constructor Function &rarr; Used to create objects</li>
+        <li>Callback Function &rarr; A function passed into another function as an argument.</li>
+        <li>Recursive Function &rarr; A function that calls itself.</li>
+    </ol>
+
+    <h2>Events</h2>
+    <p>Events is something that happens on a webpage, like click, typing, scrolling, hovering,
+        submitting a form, or when a page finishes loading.
+    </p>
+
+    <table border="1">
+        <tr>
+            <td>Event Name</td>
+            <td>What It Does</td>
+        </tr>
+        <tr>
+            <td>onclick</td>
+            <td>when something is clicked.</td>
+        </tr>
+        <tr>
+            <td>onmouseover</td>
+            <td>when the mouse hovers over something</td>
+        </tr>
+        <tr>
+            <td>onchange</td>
+            <td>when a form input changes</td>
+        </tr>
+        <tr>
+            <td>onkeydown</td>
+            <td>when a key is pressedn on a keyboard</td>
+        </tr>
+        <tr>
+            <td>onsubmit</td>
+            <td>when a form is submitted</td>
+        </tr>
+        <tr>
+            <td>onload</td>
+            <td>when the page finishes loading</td>
+        </tr>
+    </table>
+
+    <h2>Parameters and Argument</h2>
+    <p>Parameters are the place holders or variables listed inside the function definition 
+        (they define what kind of data the function expects).
+    </p>
+    <p>Arguments are the actual values passed to the Parameters when they call it.</p>
+    
+    <script>
+        // Named function
+        function greet() {
+            console.log("Good Afternoon Class");
+        }
+        greet();
+        greet();
+        greet();
+        greet();
+
+        // ANONYMOUS FUNCTIONM
+        const sayHello = function() {
+            console.log("hello everyone");
+        }
+        sayHello()
+
+        // FUNCTION EXPRESSION
+        const add = function(a,b) {
+            return a+b;
+            }
+            console.log(add(10,18));
+            console.log(add(12,16));
+
+            // ARROW FUNCTION
+            const multiply = (x,y) => x+y;
+            console.log(multiply(5,6));
+
+            // IIFE
+            // It runs immediately after it's defined
+            (function() {
+                console.log("This code runs instantly");
+            })
+
+            // Constructor Function 
+            function Person(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+            const Butcher = new Person("Butcher", 18);
+            console.log(Butcher.name);
+
+            const butcher = new Person("butcher", 20);
+            console.log(butcher.name);
+            console.log(butcher.age);
+
+            // CALLBACK FUNCTION
+            // It's passed into another function as an argument
+            function greetUser(callback) {
+                console.log("welcome");
+                callback();
+            }
+            function sayGoodBye() {
+                console.log("good bye 👋");
+            }
+            greetUser(sayGoodBye);
+    </script>
+</body>
+</html>

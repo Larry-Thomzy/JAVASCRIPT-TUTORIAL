@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operators in javascript</h1>
+    <ol>
+        <li>Arithmetic operators &rarr; used for basic maths</li>
+        <li>Assignment operators &rarr; used to assign values</li>
+        <li>Comparison operators &rarr; used to compare values (true/fasle results)</li>
+        <li>Loggical operators &rarr; used to combine conditions</li>
+        <li>Increment/Decrement operators</li>
+    </ol>
+
+    <script>
+        // ARITHMETIC OPERATORS
+        let a = 10;
+        let b = 3;
+        console.log(a+b);
+        console.log(a-b);
+        console.log(a*b);
+        console.log(a/b);
+        console.log(a%b); // Module loss or remainder
+        console.log(a**b); //Expolentiation (a raise to power b)
+
+        // ASSIGNMENT OPERATORS
+        let x = 5;
+        console.log(x += 2);
+        console.log(x -= 1);
+        console.log(x *= 3);
+        console.log(x /= 2);
+        console.log(x %= 4);
+        
+
+        // COMPARISON OPERATORS
+        let c = 5;
+        let d = 8;
+        console.log(c == d); //Equal to operator
+        console.log(c != d); // Not equal to operator
+        console.log(c > d);
+        console.log(c < d);
+        console.log(c >= d);
+        console.log(c <= d);
+        console.log(c === d); //Strict equality (checks value and datatype)
+        console.log(c != d);
+
+
+        // LOGICAL OPERATORS
+        let age = 18;
+        let hasId = true;
+        console.log(age > 18 && hasId); // AND operator (both must be true)
+        console.log(age > 18 || hasId); //OR operator (at least one must be true)
+        console.log(!hasId); //NOT(!)operator (reverses true/false)
+
+
+        // INCREMENT/DECREMENT OPERATORS
+        let n = 8;
+        console.log(n++); //Post increment - shows first, then adds 1
+        console.log(n);
+
+        console.log(++n); //Pre-increment - adds 1, then shows
+        console.log(n--); //Post-decrement
+        console.log(n);
+        console.log(--n); // Pre-decrement
+
+
+
+
+
+
+
+
+        // ASSIGNMENT
+        // check if a number is greater than 100
+        // check if the students are eligible to vote
+
+        let s = 50;
+        let j = 100;
+        console.log(s > j);
+        
+        let sammie = 21;
+        let check = true;
+        console.log(sammie > 20 || hasId);
+        
+        
+    </script>
+</body>
+</html>

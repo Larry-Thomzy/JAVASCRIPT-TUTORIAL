@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Account Demo</title>
+
+    <style>
+      body {
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px;
+      }
+      input {
+        padding: 8px;
+        margin: 5px 0;
+        width: 80%;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #45a049;
+      }
+      #output {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Imagine you are building a small banking app -->
+    <!-- This models how banks handle accounts, deposit, and withdrawals -->
+
+    <div class="container">
+      <h2>💳 Bank Account</h2>
+      <p>Owner: <b>Joy</b></p>
+      <p id="balance">Balance: $5000</p>
+
+      <input type="number" id="amount" placeholder="Enter amount" />
+      <br />
+      <button onclick="depositMoney()">Deposit</button>
+      <button onclick="withdrawMoney()">Withdraw</button>
+
+      <p id="output"></p>
+    </div>
+
+    <script>
+      class bankAccount {
+        constructor(owner, balance = 0) {
+          this.owner = owner;
+          this.balance = balance;
+        }
+        deposit(amount) {
+          this.balance += amount;
+          return `${this.owner} deposited  ${amount}. New balance: ${this.balance}`;
+        }
+
+        withdraw(amount) {
+          if (amount > this.balance) {
+            return `insufficient funds!`;
+          } else {
+            this.balance -= amount;
+            return `${this.owner} withdraw ${amount}. New balance: ${this.balance}`;
+          }
+        }
+      }
+
+      // Create an account for Joy
+      let joyAccount = new bankAccount("Joy", 5000);
+
+      // Ask user for Deposit
+      function depositMoney() {
+        let amount = parseInt(document.getElementById("amount").value);
+        if (isNaN(amount) || amount <= 0) {
+          document.getElementById("output").innerText =
+            "Enter a valid deposit  amount!";
+          return;
+        }
+        let message = joyAccount.deposit(amount);
+        updateUI(message);
+      }
+
+      // Ask user for withdrawal
+      function withdrawMoney() {
+        let amount = parseInt(document.getElementById("amount").value);
+        if (isNaN(amount) || amount <= 0) {
+          document.getElementById("output").innerText =
+            "Enter a valid withdrawal amount!";
+          return;
+        }
+        let message = joyAccount.withdraw(amount);
+        updateUI(message);
+      }
+
+      function updateUI(message) {
+        document.getElementById(
+          "balance"
+        ).innerText = `Balance: ${joyAccount.balance}`;
+        document.getElementById("output").innerText = message;
+        document.getElementById("amount").value = "";
+      }
+    </script>
+  </body>
+</html>

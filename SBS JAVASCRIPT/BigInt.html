@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BigInt</h1>
+    <p>BigInt is a built-in Javascript type that holds whole numbers of any size. you write them with an n suffix (e.g. 123456789n) or make them with BigInt(...). you can use them when you need exact integer math for very big integers (cryptography, 64-bit IDs, blockchains, etc.).</p>
+
+    <script>
+        // 1. HOW TO MAKE BIGINT
+        const a = 123n; // the n is required 
+        const b = BigInt("129282398327837989800"); // from string
+        const c = BigInt(42); // from a number
+        console.log(a, b, c);
+        
+        // 2. BASIC MATH
+        1n + 2n
+        // Notes: you cannot freely mix BigInt and number in arithmetic
+
+        // 3. COMPARISON AND EQUALITY
+        
+
+    </script>
+</body>
+</html>

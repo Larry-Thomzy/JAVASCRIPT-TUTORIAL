@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+</head>
+<body>
+    <center>
+        <form action="">
+            <h5>Enter your Meal Price: 
+            <input type="number" name="meal" id="meal">
+            </h5>
+
+            <h5>Enter your Tip Percent   
+            <input type="number" name="tip" id="tip">
+            </h5>
+
+            <input type="button" value="calculate" onclick="calc()">
+
+            <h5>Tip Amount:
+            <input type="text" name="ans" id="ans">
+            </h5>
+
+            <h5>Total amount:
+            <input type="text" name="tot" id="tot">
+            </h5>
+        </form>
+    </center>
+    
+    <script lang="javascript" type="text/javascript">
+        function calc() {
+            let meal = parseFloat(document.getElementById("meal").value);
+            let tip = parseFloat(document.getElementById("tip").value);
+
+            let tmt = meal * (tip/100);
+            let total = (meal + tmt);
+
+            document.getElementById("ans").value = tmt;
+            document.getElementById("tot").value = total;
+
+
+        }
+
+    </script>
+</body>
+</html>

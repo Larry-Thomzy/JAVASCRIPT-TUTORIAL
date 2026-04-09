@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript Methods</h1>
+    <p>A method is just a function that belongs to an object. <br>
+        It performs an action on a string. <br>We can also say a method is 
+        like anaction word in javascript just like verbs in english language.
+        <br>It describes the actions that an object can perform. e.g run,eat,jump.</p>
+        <h2>Types of string methods</h2>
+        <ol>
+            <li>String Methods</li>
+            <li>Number Methods</li>
+            <li>Array Methods</li>
+            <li>Maths Methods</li>
+        </ol>
+
+        <script>
+            // STRING METHODS
+            // using length
+            console.log("hello");
+            console.log("javascript".length);
+
+            // Using toUpperCase()
+            console.log("amala and ewedu".toUpperCase());
+            console.log("yam and egg".toUpperCase());
+
+            // Using toLowerCase()
+            console.log("RICE AND BEANS".toLowerCase());
+            console.log("APPLE JUICE".toLowerCase());
+
+            // Using includes()
+            console.log("black panther".includes("te")); // true
+            console.log("photosynthesis".includes("kk")); //false
+            
+            // Using indexOf()
+            console.log("hello".indexOf("e"));
+            console.log("howdy".indexOf("g"));
+
+            // Using slice()
+            console.log("watermelon".slice(4));
+            console.log("watermelon".slice(2,5));
+
+            // Using replace()
+            console.log("i can code".replace("code","teach"));
+            console.log("i love beans".replace("beans","eba"));
+
+            // trim() - It removes space
+            console.log("i love black".trim());
+
+            // replaceAll() - removes every space
+            console.log("i love pink".replaceAll(" ",""));
+
+
+            // NUMBER METHODS
+            // toString()
+            let num = 100;
+            console.log(num.toString());
+
+            // toFixed
+            let num2 = 3.4159;
+            console.log(num2.toFixed());
+
+            // parseInt
+            let num3 = 10.5;
+            console.log(parseInt(num3));
+
+            // isNaN
+            console.log(isNaN("hello"));
+            console.log(isNaN(300));
+
+
+            // MATHS METHOD
+            // Math.round() - normal rounding
+            console.log(Math.round(4.6));
+
+            // Math.floor() - rounds down
+            console.log(Math.floor(4.5));
+            console.log(Math.floor(5.2));
+
+            // Math.ceil() - rounds up
+            console.log(Math.ceil(4.2));
+            console.log(Math.ceil(15.9));
+
+            // Math.random()  - random numbers (0 to 1)
+            console.log(Math.random());
+            console.log(parseInt(Math.random()));
+
+            // Math.max()
+            console.log(Math.max(1,3,9));
+
+            // Math.min()
+            console.log(Math.min(32,4,67,8));
+
+            // Math.pow()
+            console.log();
+            console.log(Math.pow(2,3));
+
+            // Math.sqrt()
+            console.log(Math.sqrt(16));
+
+            //  Math.trunc() - removes decimal parts
+            console.log(Math.trunc(18.15));
+            console.log(Math.trunc(13.100));
+
+
+            // ARRAY METHOD
+            let friuts = ["apple","orange","banana","lemon"];
+
+            // Basic Array method
+            console.log(friuts.length);
+            console.log(friuts[0]);
+
+            // add or remove item - adds to the end
+            console.log(friuts.push("grape")); 
+            console.log(friuts);
+
+            console.log(friuts.pop()); // removes last item
+            console.log(friuts);
+            
+            
+            console.log(friuts.unshift('kiwi')); // adds to the beginning
+            console.log(friuts);
+
+            console.log(friuts.shift()); // removes first item
+            console.log(friuts);
+
+            // search
+            console.log(friuts.includes("watermelon"));
+            console.log(friuts.includes("apple"));
+            console.log(friuts.indexOf("orange"));
+
+            // Extract or change
+            console.log(friuts.slice(1,3));
+            console.log(friuts.splice(2,1));
+
+            // Combine and join
+            let moreFruits = ["Pineapple","Mango","Cherry","Avocado"];
+            let allFruits = friuts.concat(moreFruits)
+            console.log(allFruits);
+            console.log(allFruits.join("-"));
+        </script>
+</body>
+</html>

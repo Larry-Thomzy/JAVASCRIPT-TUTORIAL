@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Step 1: Create a JSON Object
+        let user = {
+            name: "Awalu",
+            age: 9,
+            isStudent: true,
+            skills: ["HTML", "CSS", "JS" ],
+            address: {
+                city: "Lagos",
+                country: "Portugal"
+            }
+        };
+        
+        // Step 2: Convert object to JSON string
+        const jsonString = JSON.stringify(user);
+        console.log("JSON String:", jsonString);
+        
+
+        // Step 3: Parse JSON String back to Object
+        const parsedUser = JSON.parse(jsonString);
+
+        // Step 4: Print Details
+        console.log("name:", parsedUser.name);
+        console.log("first skills:", parsedUser.skills[1]);
+        console.log("city:", parsedUser.address.city);
+        
+        // EXAMPLE 2: localStorage
+        // Step 1: Save Data
+        localStorage.setItem("username", "Babatunde");
+
+        // Step 2: Get Data
+        let name = localStorage.getItem("username")
+        console.log(name);
+
+        // Step 3: Remove Data
+        localStorage.removeItem("username");
+
+        // EXAMPLE 3: SET
+        // .add() - adds a value to the set
+        let fruits = new Set();
+        fruits.add("apple");
+        fruits.add("mango");
+        fruits.add("banana");
+        fruits.add("orange");
+        fruits.add("watermelon");
+        fruits.add("pineapple");
+        fruits.add("apple"); // Duplicate ignored
+        console.log(fruits);
+
+        // .has() - checks if a value exists in the set 
+        console.log(fruits.has("banana"));
+        console.log(fruits.has("cherry"));
+
+        // .delete() - removes a value from the set
+        fruits.delete("banana")
+        console.log(fruits);
+
+        // .clear() - removes all elements
+        fruits.clear()
+        console.log(fruits);
+
+        // .size - returns the number of elements in the set
+        let colors = new Set(["red", "green", "blue", "pink", "purple", "violet", "indigo"]) 
+        console.log(colors.size);
+
+        // Map
+        let userMap = new Map();
+        userMap.set("name", "Fathia");
+        userMap.set("age", 20);  
+        console.log(userMap.get("name"));
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

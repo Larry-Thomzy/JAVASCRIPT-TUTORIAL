@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Switch</h1>
+    <p>A Switch Statement is used to execute different code blocks
+        based on the value of an expression. It is like an alternative
+        to writing many if...else if statements.
+    </p>
+    <h2> 📌 How it works</h2>
+    <ol>
+        <li>JavaScript evaluate the expression.</li>
+        <li>It checks each case.</li>
+        <li>If it matches, it runs the code inside that case.</li>
+        <li>The break statements stop the switch from continuing to
+            the next case.
+        </li>
+        <li>If no match is found, The default case runs (optional).</li>
+    </ol>
+
+    <script>
+        // SYTNTAX
+        let expression = 3
+        let value1;
+        let value2;
+        switch (expression) {
+            case value1: 
+                // code to run if expression === value 1
+                break;
+            case value2:
+                // code to run if expression === value 2
+                break;
+            default:
+                // code to run if no case matches
+                
+        }
+        
+
+        // EXAMPLE 1 : DAYS OF THE WEEK
+            let day = 7 
+            let dayName; 
+            switch (day) {
+                case 1:
+                    dayName = "Monday"
+                    break;
+                case 2: 
+                    dayName = "Tuesday"
+                    break;
+                case 3:
+                    dayName = "Wednesday"
+                    break;
+                case 4:
+                    dayName = "Thursday"
+                    break;
+                case 5:
+                    dayName = "Friday"
+                    break;
+                case 6:
+                    dayName = "Saturday"
+                    break;
+                case 7:
+                    dayName = "Sunday"
+                    break;
+                default:
+                    dayName = "Invalid day"
+            }
+            console.log(dayName);
+
+            // EXAMPLE 2: GRADING SYSTEM
+            let grade = "A"
+            switch (grade) {
+                case "A":
+                    console.log("Excellent!");
+                    break;
+                case "B":
+                    console.log("Good Job!");
+                    break;
+                case "C":
+                    console.log("Well Done!");
+                    break;
+                case "D":
+                    console.log("You Passed!");
+                    break;
+                case "F":
+                    console.log("Better Try Again!");
+                    break;
+                default:
+                  console.log("Invalid Grade");
+                    break;
+            }
+
+            // EXAMPLE 3: WITHOUT BREAK
+            // If you omit break, the code will fall through and continue
+            // executing the next case until it finds a break or ends.
+            let color = "Red"
+            switch (color) {
+                case "Red":
+                    console.log("Red Chosen");
+                case "Blue":
+                    console.log("Blue Chosen");
+                case "Green":
+                    console.log("Green Chosen");
+                case "Yellow":
+                    console.log("Yellow Chosen");
+                default:
+                    console.log("No Match");
+            }
+
+            
+    </script>
+</body>
+</html>

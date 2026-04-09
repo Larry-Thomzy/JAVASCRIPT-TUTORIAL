@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object in javascript</h1>
+    <p>An Objectv is a collection of properties, and each property has a key(name) and a value</p>
+    <p>For example, a personn has propertieslike name, age, and whether the person is a student</p>
+
+    <script>
+        const person1 = {
+            name:"Sammie Jammie",
+            age:78,
+            height:6.4
+        }
+        const person2 = {
+            name:"Fright Jeremy",
+            age:24,
+            height:5.5,
+            profession:"No One"
+        }
+        const person3 = {
+            name:"jeremy D.T.B",
+            age:32,
+            height:4.7,
+            profession:"No One"
+        }
+
+        // STEP 2: Accessing Object Properties
+        console.log(person1);
+        console.log(person2);
+        console.log(person3);
+
+        // Using Dot Notation
+        console.log(person2.name);
+        console.log(person3.age);
+        console.log(person1.height);
+
+        // Bracket Notation
+        console.log(person2["age"]);
+        console.log(person3["profession"]);
+        console.log(person1["name"]);
+
+        // STEP3: ADDING CHANGING AND DELETING PROPERTIES
+        person1.gender = "Male"; // add
+        person2.age = 42; // change
+        delete person3.profession; // delete
+        console.log(person1);
+
+        // NESTED OBJECTS
+        const student = {
+            name: "Sam-Chase",
+            scores : {
+                math:98,
+                english:70,
+                Chemistry:81,
+                physics: 70,
+            },
+            unit:{
+                math:2.2,
+                english:2.6,
+                Chemistry:3.4,
+                physics:3.7
+            }
+
+        };
+        console.log(student.scores.math);
+        console.log(student.unit.Chemistry);
+
+        // OBJECTS IN ARRAYS
+        const FacebookUsers = [
+            {
+                name: "Sam-Chase",
+                gmail: "Queeen-Essa@gmaail.com",
+                password: "fr65512."
+            },
+            {
+                name:"easy",
+                gmail: "MrEasy@gmail.com",
+                password: "6788987000"
+            },
+            {
+                
+                name:"Escalladizzy",
+                gmail: "BossMan@gmail.com",
+                password: "$*#@<?/;gr5"
+            }
+        ];
+        console.log(FacebookUsers[2].password);
+        console.log(FacebookUsers[1].gmail);
+        console.log(FacebookUsers[0].userName);
+
+        // USEFUL OBJECT METHODS
+        Object.keys(person3);
+        Object.values(FacebookUsers);
+        console.log(Object.entries(FacebookUsers));
+    </script>
+</body>
+</html>

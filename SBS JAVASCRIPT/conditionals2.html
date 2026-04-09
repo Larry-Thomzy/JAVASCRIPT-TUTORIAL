@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .h1{
+            background: red;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">Conditional Statements in JavaScript</h1>
+    <p>Conditional statements help your code make decisions. <br>They check if something is true or false, then decides what to do next <br> For Example: "If it's raining, i'll take an umbrella. Else, i won't"</p>
+    <button onclick="changeText()">Click here</button>
+    <script>
+
+        function changeText() {
+        document.getElementById("h1").textContent = " hello"; 
+        document.getElementById("h1").classList.add("h1")
+        }
+
+        function x(color) {
+            // alert("enter your age")
+        }
+        x()
+
+
+        // if...else
+        // let age = prompt("Enter your age:");
+        if (age >= 18) {
+            alert("You are an Adult ✅");
+        } else{
+            alert("You are a minor 🙅‍♀️🔞");
+        }
+
+        // else...if
+        // Sometimes, we need to check for more than two conditions
+        let score = 65;
+        if (score >= 70) {
+            // alert("Congratulations! you passed 🎉");
+        }else if (score >= 50) {
+            // alert("Satisfactory");
+        }else{
+            // alert("we are sorry 😪");
+        }
+
+        // Switch Statement
+        // let day = prompt("Enter a day of the week (e.g., Monday, Friday, Sunday):");
+
+        switch(day) {
+            case "Monday":
+                alert("Start of the week!");
+                break;
+
+            case "Friday":
+                alert("Weekend is near!");
+                break;
+
+            case "Sunday":
+                alert("Rest day!");
+                break;
+
+            default:
+                alert("Just another day.");
+        }
+
+        // 🚦 Another Example: Traffic Light
+        let light = "red";
+
+        switch(light) {
+        case "green":
+            console.log("Go!");
+            break;
+
+        case "yellow":
+            console.log("Slow down.");
+            break;
+
+        case "red":
+            console.log("Stop!");
+            break;
+
+        default:
+            console.log("Invalid color");
+        }
+
+    </script>
+</body>
+</html>

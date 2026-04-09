@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Quiz Website</title>
+
+    <style>
+        body{
+            font-family: Cambria;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .quiz-container{
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        button{
+            background: plum;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.5s;
+        }
+        button:hover{
+            background: palevioletred;
+        }
+        .option{
+            background: palevioletred;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .option:hover{
+            background: plum;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>My Mini Quiz Game 🎀</h1>
+        <div class="question-container">
+            <h2 id="question"></h2>
+            <div id="options"></div>
+        </div>
+        <button id="next-btn">Next</button>
+        <p id="score"></p>
+    </div>
+
+    <script>
+        const quiz = [
+            {
+                question: "What is the capital of Nigeria?",
+                options: ["Lagos","Abuja","Kano"],
+                answer:"Abuja"
+            },
+            {
+                question: "What does JS stand for?",
+                options: ["JavaSource","JavaScript","JustScript"],
+                answer:"JavaScript"
+            },
+            {
+                question: "Which keyword is used to declare a variable in JavaSript?",
+                options: ["let","define","declare"],
+                answer:"let"
+            },
+            {
+                question: "What does HTML stands for?",
+                options: ["Hot Telephone Master Laptop", "HyperText Markup Language", "Hypertext Marker Link"],
+                answer:"HyperText Markup Language"
+            },
+            {
+                question:"Margin is the space ______ an HTML element",
+                options:["inbetween", "around", "inside"],
+                answer:"around"
+            },
+            {
+                question:"What language is used to style HTML?",
+                options:["PHP", "Python", "CSS"],
+                answer:"CSS"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const questionElement = document.getElementById("question");
+        const optionsContainer = document.getElementById("options");
+        const nextButton = document.getElementById("next-btn");
+        const scoreElement = document.getElementById("score");
+
+        function showQuestion() {
+            const current = quiz[currentQuestion];
+            questionElement.textContent = current.question;
+            optionsContainer.innerHTML = "";
+
+            current.options.forEach(option => {
+                const btn = document.createElement("div");
+                btn.textContent = option;
+                btn.classList.add("option");
+                btn.onclick = () => checkAnswer(option);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected) {
+            const correct = quiz[currentQuestion].answer;
+            if (selected === correct) {
+                score++;
+                alert("✅ Correct!");
+            }else{
+                alert(`❌ Wrong! Correct answer: ${correct} `);
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < quiz.length) {
+                showQuestion();
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+            questionElement.textContent = "Quiz Completed! 🥳🎉";
+            optionsContainer.innerHTML = "";
+            nextButton.style.display = "none";
+            scoreElement.textContent = `Your score: ${score}/${quiz.length}`;
+        }
+
+        nextButton.addEventListener('click', showQuestion);
+
+        showQuestion();
+    </script>
+</body>
+</html>

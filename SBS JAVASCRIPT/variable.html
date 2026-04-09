@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>variable in javascript</h1>
+    A variable is a container for storing 
+    data (like a box that holds something)
+    <h2>Ways to define variables</h2>
+    <ol>
+        <li>var - old way(not commonly used now)</li>
+        <li>let - modern way, can change later</li>
+        <li>const - cannot change</li>
+    </ol>
+
+    <h2>JavaScript data types</h2>
+
+
+
+    <h2>typeof</h2>
+    <p>The typeof operator is used to find out the datatype of a value or variable 
+        in javascript</p>
+
+    <script>
+        let names_of_students = "samuel,babatunde,mubarak,tajudeen";
+        names_of_students = "sammie,joseph";
+
+        const age = 11;
+
+        var country = "Nigeria"
+        console.log(names_of_students);
+        const dateOfBirth = 2011;
+        console.log(dateOfBirth);
+
+        // Pimittive data types
+         // string data type
+        let name = "sammie"  //double string
+        let school = 'Unilag' //single string
+        let favorite_food = `Yam and Egg` //back-tick string
+
+        // Number data type
+        let name2 = 18; // integer or whole number
+        let height = 18.2; // float or decimal
+
+        // boolean data type
+        let isStudent = true;
+
+        // Undefined data type
+        let color;
+        console.log(color);
+
+
+        // null data type
+        let emptybox = null;
+        // symbol data type
+        let id = Symbol("id");
+        //bigInt
+        let bignumber = 123456789n;
+
+        // Non Primmitive data type
+        // object data type
+        let person = {
+            name: "esther",
+            age:14
+        };
+
+        // array data type
+        let fruit = ["apple","banana","mango"];
+        // function data type
+        function greet() {
+            return "hello Sammie"
+            
+        };
+
+    
+        // Examples
+        let x = 10;
+        let y = 7;
+        let z = x + y;
+        console.log(z);
+        let s =  10;
+        let a = 5;
+        let m = s - a;
+        console.log(m);
+        let c = 20;
+        let h = 5;
+        let r = c*h;
+        console.log(r);
+        let price1 = 3000;
+        let price2 = 9000;
+        let totalprice = price1 + price2;
+        console.log(totalprice);
+        let addition = 3+8+9+16;
+        console.log(addition);
+
+        // if you put a number in quote the number will be treated as string
+        let string = "10";
+        let Fright = "5" + 5;
+        console.log(Fright);
+        let sam = "hello" + 10;
+        console.log(sam);
+
+        let weather;
+        weather = "sunny";
+        console.log("today's weather is:",weather);
+
+        // Assignment
+        // 1. Create a new file named datatypeAssignment.html
+        // 2. Declare at least 1 variable for the following data types:
+        // String, number, boolean, undfined, object, array
+        // 3. Display each data type on the console
+
+
+
+
+
+        // typeof examples
+        console.log(typeof"Sam");
+        console.log(typeof"10");
+        console.log(typeof true);
+        console.log(typeof person);
+        console.log(typeof addition);
+        
+
+        console.log("my day wasn't bad, had to prepare early because of the rain,got stuck in traffic too");
+        
+        
+
+        
+
+
+    </script>
+</body>
+</html>

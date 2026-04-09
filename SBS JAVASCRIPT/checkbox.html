@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-image: url("/programming/96ad0de0c6c91167eb94c4922996f2b7.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background: #000; */
+            /* background: linear-gradient(to bottom left ,  hotpink, rgb(219, 210, 215)); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card{
+            border-top:2px solid #ffffff75 ;
+            border-left:2px solid #ffffff75 ;
+            background: #ffffff25;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+            box-shadow: 5px 5px 12px #00000035;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px; 
+        }
+        button{
+            padding: 10px 20px;
+
+        }
+        button:hover{
+            background: rgb(32, 146, 184);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+    <input type="checkbox" id="myCheckbox">
+    <label for="myCheckbox">Subscribe</label><br>
+
+    <input type="radio" id="paypalBtn" name="html">
+    <label for="paypalBtn">Paypal</label><br>
+
+    <input type="radio" id="mastercardBtn" name="html">
+    <label for="mastercardBtn">Mastercard</label><br>
+
+    <input type="radio" id="visacardBtn" name="html">
+    <label for="visacardBtn">visa</label><br><br><br>
+
+    <button id="clickMe">SUBMIT</button>
+
+    <p id="submitpara"></p>
+    <p id="result"></p>
+    </div>
+
+    <script>
+        const myCheckbox = document.getElementById("myCheckbox");
+
+        const paypalBtn = document.getElementById("paypalBtn");
+
+        const mastercardBtn = document.getElementById("mastercardBtn");
+
+        const visacardBtn = document.getElementById("visacardBtn");
+
+        const clickMe = document.getElementById("clickMe");
+
+        const submitpara = document.getElementById("submitpara");
+
+        const result = document.getElementById("result");
+
+        clickMe.onclick = function () {
+            if (myCheckbox.checked) {
+                submitpara.innerHTML = `<h1>you are subscribed!</h1>`
+            }else{
+                submitpara.innerText = `You haven't subscribe`
+            }
+
+            if (paypalBtn.checked) {
+                result.textContent = `you are paying with paypal`
+            }else if(mastercardBtn.checked){
+                result.textContent = `you are paying with mastercard`
+            }else if (visacardBtn.checked) {
+                result.textContent = `you are paying with Visa Card`
+            }
+        }
+
+    </script>
+</body>
+</html>

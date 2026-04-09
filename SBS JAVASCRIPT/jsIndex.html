@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Index(Indices)</h1>
+    <p>Every character in a string has a position(index)</p>
+    <p>Indexing starts at zero(0) in javascript</p>
+
+    <h2>String</h2>
+    <p>A string is a sequence of characters. <br> Each character has a position called an index.</p>
+
+    <h2>Why do we use indexes?</h2>
+    <ul>
+        <li>It is used to get specfic characters</li>
+        <li>It is used to find where a letter or word is</li>
+        <li>It is used to check if something is there or not</li>
+    </ul>
+    <h2>Key String Methods For Index</h2>
+    <ol>
+        <li>charAt()- returns the character at that position</li>
+        <li>indexOf()- returns the index(position) of the first occurence</li>
+        <li>lastIndexOf()- It returns the last occurence of the word appears more than once</li>
+    </ol>
+    
+    <script>
+        let string1 = "Javascript";
+        //Using charAt()
+        console.log(string1.charAt(0)); //j
+        console.log(string1.charAt(4)); //s
+        console.log(string1.charAt(100)); //empty string
+
+        //BRACKET NOTAION (recommended)
+        console.log(string1[5]);
+        console.log(string1[100]); //undefined
+        console.log(string1[8]);
+        
+        //Using indexOf(searchValue, fromIndex?) 
+        const string2 = "Banana";
+        console.log(string2.indexOf("a"));
+        console.log(string2.indexOf("b")); //-1(not found)
+        console.log(string2.indexOf("B"));
+        console.log(string2.indexOf("na"));
+        console.log(string2.indexOf("a",4));
+
+        //usng lastIndexOf()
+        console.log(string2.lastIndexOf("a"));
+        console.log(string2.lastIndexOf("n"));
+
+        //using includes() - it checks if a sub string exist then return true or false
+        console.log(string2.includes("z")); // false
+        console.log(string2.includes("x")); // false
+        console.log(string2.includes("nana"));// true
+
+        // Using slice(start, end) - it extract a sub-string from start up to end (But not including the end)    
+        const string3 = "hello world"
+        console.log(string3.slice(2,5));
+        console.log(string3.slice(6));
+        console.log(string3.slice(4,11));
+    </script>
+</body>
+</html>

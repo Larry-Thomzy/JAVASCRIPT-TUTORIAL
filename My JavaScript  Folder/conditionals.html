@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript conditions</h1>
+    <p>conditional statement allow our program to make decisions. <br>it
+    checks if something is true or false, then runs the right code. <br>For
+     Example: if it rains, i will take an umbrella, else i won't.</p>
+
+     <h2>Switch Statement</h2>
+     <p>A switch statement is used when you want to check one variable against
+        multiple possible values <br>it works like multiple if...else,
+    but it's easier and cleaner to read.</p>.
+
+
+    <h2>Ternary operator</h2>
+    <p>Ternary operator is a short form of an if...else statement <br> It's called ternary because it takes 3 operands:
+    </p>
+    <ul>
+        <li>Condition &rarr; what you're checking (must be true or false)</li>
+        <li>expressionIftrue &rarr; what runs if the condition is true</li>
+        <li>expressionIffasle &rarr; what runs if the condition is false</li>
+    </ul>
+
+    <h3>Syntax</h3>
+    <code>condition &rarr; ? expressionIfTrue &rarr; : expressionIfFalse &rarr; ;</code>
+
+
+
+
+
+
+
+
+
+     <SCRipt>
+        // Example 1: If...else
+        let age = 17;
+        if (age >= 18) {
+            console.log("you are an adult🙂");
+            
+        }else{
+            console.log("you are a minor😔");
+        }
+
+
+
+        //else...if
+        // sometimes we need to check more than two conditions
+        let score = 65;
+        if (score >= 70) {
+            console.log("grade a 👍");
+            }else if (score >= 50) {
+                console.log("grade b 😒"); 
+            }else if (score >= 40){
+                console.log("grade c 👌");
+            }else{
+                console.log("grade c ☹️");
+            }
+
+
+            let temperature = 30;
+            if (temperature > 25){
+                console.log("it's hot outside ☀️");
+                }else {
+                console.log("it.s cold outside 🥶");
+            }
+
+            // Switch example:
+            let day = prompt("Enter a day of the week:");
+            switch (day) {
+                case "Monday":
+                    alert("Start of the week");
+                    break;
+
+                    case "Friday":
+                        alert("Weekend is here");
+                        break;
+
+                    case "Sunday":
+                        alert("Yay it's weekend");
+                        break
+                default:
+                    alert("Just another day");
+                    break;
+            }
+
+
+            
+
+            // Example: Traffic light
+            let light = prompt()
+            switch (light) {
+                case "green":
+                    alert("Go!");
+                    break;
+
+                case "yellow":
+                    alert("Slow down"); 
+                    break;
+
+                case "red":
+                    alert("Stop");
+                    break;
+            
+                default:
+                    alert("Invalid color");
+                    break;
+            }
+
+            // ternary operator examples
+            let studentAge = 13;
+            let results = (studentAge >= 18)? "Adult" : "minor";
+            console.log(results);
+
+            let isLoggedIn = false;
+            console.log(isLoggedIn ? "Welcome back" : "Please login");
+
+            let marks = 40;
+            console.log(marks >= 50 ? "Pass" : "Fail");
+            
+
+    </SCRipt>
+
+    
+
+</body>
+</html>

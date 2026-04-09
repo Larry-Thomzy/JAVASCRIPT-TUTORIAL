@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul li{
+            list-style: "🔷 ";
+        }
+        .list-1 li{
+            list-style: "🔥";
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript DOM Manipulation</h1>
+    <p>The DOM (Document Object Model) represents your HTML file as a tree. Js lets you select element from it.</p>
+    <p>Javascript can select, change, add or delete HTML element using the DOM.</p>
+
+    <ul>
+        <li>
+            <h3>Selecting Elements</h3>
+            <p>We need to grab before manipulating them.</p>
+            <ol class="list-1">
+                <li>
+                    document.getElementById("id")  &rarr; selects by id.
+                </li>
+                <li>
+                    document.getElementByClassName ("class") &rarr; selects all elements with that class.
+                </li>
+                <li>
+                    document.getElementByTagName ("tag") &rarr; selects elements by tag name.
+                </li>
+                <li>
+                    document.querySelector("selector") &rarr; selects the first match (CSS selector) 
+                </li>
+                <li>
+                    document.querySelectorAll ("selector") &rarr; selects all matches
+                </li>
+            </ol>
+        </li>
+
+        <li>
+            <h3>Manipulating Elements</h3>
+            <p>Once selected, you can change their contents, style or attributes.</p>
+            
+            <ul class="list-1">
+                <li>
+                    element.textContent &rarr; change inner text.
+                </li>
+                <li>
+                    element.innerHTML &rarr; change innerHTML (can add tags).
+                </li>
+                <li>
+                    element.style.property &rarr; change CSS styles.
+                </li>
+                <li>
+                    element.setAttributes("attr", "value") &rarr; change/setAttributes.
+                </li>
+                <li>
+                    element.classList.add/remove/toggle("class") &rarr; manage CSS classes.
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>Events and Events Listeners</h3>
+            <p>Events are actions that happen in the browser (e.g click, hover, keypress) <br> We use event listeners to react when events happens.</p>
+            <h4>Ways to add events:</h4>
+            <ol>
+                <li>Inline in HTML (not recommended)</li>
+                <li>Assign directly in JavaScript</li>
+                <li>Using addEventListener (best practiced)</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        
+    </style>
+</head>
+<body>
+    <p id="heading1" >DOM Practice</p>
+
+    <p id="p2">Biscuit</p>
+
+    <p id="p3">Beans and rice</p>
+
+    <button onclick="changeContent()">Click here!</button>
+
+    <div id="box"></div>
+    <button id="btn">Click Me!</button>
+    
+
+
+    <script>
+       function changeContent() {
+         let x = document.getElementById("heading1");
+        x.style.color = "purple";
+        // x.style.backgroundColor = "yellow";
+        x.style.padding = "2px";
+
+         x.innerHTML = "<em>Hello Everyone</em>"
+        
+        document.getElementById("p2").innerText = "Sweet";
+
+        document.getElementById("p3").textContent = "jollof rice";
+       }
+
+       let container = document.getElementById("box");
+       let button = document.getElementById("btn");
+
+       button.addEventListener("click", () => {
+        container.textContent = "DOM Manipulation";
+        container.style.color = "green";
+       })
+
+
+
+
+
+    </script>
+
+</body>
+</html>

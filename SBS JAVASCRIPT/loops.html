@@ -1,0 +1,104 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            text-decoration: underline;
+            margin-left:100px ;
+        }
+        div{
+            box-shadow: 0 6px 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fadcd5;
+        }
+
+    </style>
+</head>
+<body>
+   <h1>LOOPS 🔃</h1>
+   <p>A loop let you run the same block of       
+    code multiple times until a condition is met.</p>
+   <p>When you have to perform a task 
+    repeatedly until a condition is met,
+    you will use a loop.
+   </p>
+   <div>
+        for (iterator; condition; iteration){
+            logic;
+        } <br>
+
+        for(let i = 0; i < count; i = i + 1){
+            console.log(i)
+        }
+
+        <ul>
+            <li>
+                Iterator - it is a variable that controls how the loop (iterates)
+                goes through your logic
+            </li>
+            <li>
+                Condition - it tells the loop how many times it should iterate. 
+                When the condition becomes false, the loop stop.
+            </li>
+            <li>
+                Iteration - it will tell your loop what to do with the iterator after each run
+            </li>
+        </ul>
+   </div>
+   <h2>Types Of Loops In javascript</h2>
+   <ol>
+    <li>For loop - It is used when you know how many times you want to run the code</li>
+    <li>While Loop - It runs as long as the condition is true</li>
+    <li>do...while loop - It is similar to while loop, but it runs at least once,
+         even if the condition is false </li>
+    <li>for...of loop (for arrays, strings, etc)</li>
+    <li>for...in loop</li>
+   </ol>
+   
+
+   <script>
+    // List 1 example: This code will print numbers 1 to 5
+     for(let fruit = 10; fruit <= 50; fruit+=5){
+        console.log(fruit + " Mangoes");
+     }
+
+    // List 2 example: This code will print numbers 1 to 5
+     let i = 5;
+     while(i <= 100){
+        console.log(i);
+         i += 2;
+     }
+
+    // List 3 example: This code will print 6 once before stopping
+     let num = 7;
+     do{
+         console.log(num);
+         num++
+     }while(num <= 10);
+
+    // List 4 example:
+     let colors = ["red","green","blue"];
+     for(let color of colors){
+        console.log(color);
+     }
+
+    // List 5 example
+     let person = {name:"Esther", age:"14", city:"Lagos",};
+     for(let key in person){
+        console.log(key + ":" + person[key]);
+    }
+
+    // charging a phone
+     let battery = 20;
+    while (battery <= 100) {
+        console.log("charging...Battery at " + battery + "%");
+        battery += 20;
+     }
+   </script>
+</body>
+</html>

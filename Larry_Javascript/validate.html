@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate</title>
+</head>
+<body>
+    <br><br>
+    <center>
+    <form action="" method="" onsubmit="">
+        <table>
+            <tr>
+                <td>Firstname</td>
+                <td><input type="text" name="fname" id="fname"></td>
+            </tr>
+
+            <tr>
+                <td>Surname</td>
+                <td><input type="text" name="sname" id="sname"></td>
+            </tr>
+
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="text" name="phone" id="phone"></td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="button" name="Submit" value="Submit" onclick="validate()"></td>
+            </tr>
+        </table>
+        
+    </form>
+    </center>
+
+    <script>
+        function validate () {
+            let fname = document.getElementById("fname").value.toString();
+            let sname = document.getElementById("sname").value.toString();
+            let phone = document.getElementById("phone").value.toString();
+            let email = document.getElementById("email").value.toString();
+
+            if (fname.length <= 0 || sname.length <= 0 || phone.length <= 0 || email.length <= 0) {
+                document.writeln("<font color = 'red' >Fill all fields</font>");
+            }
+
+            
+        }
+    </script>
+</body>
+</html>

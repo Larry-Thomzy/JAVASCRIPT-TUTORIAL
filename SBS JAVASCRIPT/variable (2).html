@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Variable</h1>
+    <p>A variable is a container for storing data (like a box that holds something)</p>
+
+    <h2>How to define variable</h2>
+    <ol>
+        <li>let</li>
+        <li>const</li>
+        <li>var (old method, not recommended)</li>
+    </ol>
+
+    <h2>JavaScript DataTypes</h2>
+    <p>You can store different datatypes in variables</p>
+
+    <h2>typeof operator</h2>
+    <p>The typeof operator is used to find out the data type of a value or variable in js</p>
+
+    <script>
+        let name = "Halimat";
+        let gmail = "halimat@gmail.com"
+        const age = 14;
+        var country = "Nigeria";
+
+        console.log(name);
+        // alert("My name is " + name + ", I am " + age + " years old and I live in " + country);
+        
+
+        // DATATYPES
+        // String datatype
+        let food = "Amala"; // double string
+        let myFavouriteDrink = 'pepsi'; // single string
+        let color = `pink`; // backtick string
+
+        // Number datatype
+        let number = 12; // integer (whole number)
+        let price = 18.9;  // float (decimal number)
+
+        // Boolean datatype
+        const isPrimaryUser = true; //camel case
+        const is_new_user = false; // snake case
+
+        //undefined datatype
+        let result;
+
+        //null datatype
+        const emptyBoxOrUnknownValue = null;
+
+        //object
+        const person = {
+        firstName: "Bose",
+        lastName: "gbolahan",
+        age: 21
+        };
+
+        // typeof operator
+        console.log(typeof "blessing");
+        console.log(typeof 87);
+        console.log(typeof true);
+        console.log(typeof is_new_user);
+        console.log(typeof person);
+        
+        
+
+
+    </script>
+</body>
+</html>

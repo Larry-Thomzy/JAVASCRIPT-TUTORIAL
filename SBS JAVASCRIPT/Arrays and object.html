@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays and Objects in JavaScript</h1>
+    <h2> 📌 Arrays</h2>
+    <ul>
+        <li>An array is a special type of object
+             used to store multiple values in a
+              single variable.
+        </li>
+        <li>Arrays are ordered, meaning each value has 
+            an index (starting from 0).
+        </li>
+    </ul>
+    
+    <script>
+        // Creating an Array
+        let fruits = ["orange", "apple", "pineapple"];
+        console.log(fruits[1]); // apple
+        console.log(fruits[2]); // pineapple
+        console.log(fruits[0]); // orange
+
+        // Adding to an array: using .push()
+        fruits.push("mango", "banana", "strawberry");
+        console.log(fruits);
+
+        //  Removing from an array: using .pop()
+        // .pop() only removes the last element
+        fruits.pop();
+        console.log(fruits);
+
+        // using .shift() - removes the first element
+        fruits.shift();
+        console.log(fruits);
+
+        // using .splice() - removes element by index
+        fruits.splice(0,1);
+        console.log(fruits);
+
+        // using.filter() - removes by value
+        fruits = fruits.filter(fruit => fruit !== "pineapple");
+        console.log(fruits);
+        // filter() - is an array
+        // method that goes through each 
+        //element and keeps only the ones
+        //  that match the conditions.
+        // 1. It returns a new array with the element that pass
+       // the test.
+        //2. It does not change the original array directly.
+
+        // Looping through array 
+        fruits.forEach(function (fruit, index){
+            console.log(index + ":" + fruit);
+        });
+        // ForEach() - is an array method in Js. It loops through every item in the array and runs a function for each item.
+
+        // 
+        
+
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

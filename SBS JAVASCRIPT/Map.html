@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>map() in javascript.</h1>
+   <p>map() is na array method in javascript.</p>
+   <p>It creates a new array by applying a function to each element of the original array.</p>
+   <p>It doesn't change the original array.</p>
+   <h2>📌 Key Points:</h2>
+   <ol>
+    <li>Always returns a new array.</li>
+    <li>The lenght of the new array = lenght of the orignal array.</li>
+    <li>Commonly used for transforming data.</li>
+   </ol>
+   <h2> ✅ Notes: map() is used when you want to transform each element of an array into a new form without touching the original array </h2>
+
+   <script>
+    // EXAMPLE 1: SQUARE NUMBERS
+    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let squares = numbers.map(num => num * num );
+    console.log(squares);
+    
+    // EXAMPLE 2: CONVERTS STRINGS TO UPPERCASE
+    let fruits = ["apple", "mango", "cherry", "banana", "strawberry", "guava"];
+    let upperFruits = fruits.map(fruit => fruit.toUpperCase());
+    console.log(upperFruits);
+
+    // EXAMPLE 3: EXTRACT SPECIFIC PROPERTY FROM OBJECT
+    let users = [
+        {name: "Ore", age: 16},
+        {name: "Malik", age: 15},
+        {name: "Ganiyy", age: 14}
+    ];
+    let names = users.map(user => user.name);
+    console.log(names);
+    let ages = users.map(user => user.age);
+    console.log(ages);
+    
+    // EXAMPLE 4: USE INDEX INSIDE MAP
+    let withIndex = numbers.map((num, i ) => num + i);
+    console.log(withIndex);
+    
+    
+
+   </script>
+</body>
+</html>

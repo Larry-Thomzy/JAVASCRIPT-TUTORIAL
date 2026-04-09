@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript dates</h1>
+    <p>Javascript gives us built-in objects called dates that let's us work with dates and times</p>
+    <script>
+        // 1: CREATING DATES using Date()
+        // There are few ways to create dates in javascript:
+        // Current date and time
+        let now = new Date()
+         console.log(now);
+
+
+        alert(Date()) 
+         console.log(Date());
+
+        // Specific Dates (year,month,day)
+        // Note: months are 0-based(0 = january, 11 = december)
+        let birthday = new Date(2005,2,14)
+        console.log("i was born on", birthday);
+
+        // Dates with time
+        // Creating Dates with time
+        let alarm = new Date(2025, 9, 11, 10,20,12)
+        console.log("i have to wake up by", alarm);
+        
+        // 2: GETTING DATES COMPONENTS
+        // You can extract parts of a dates
+        let today = new Date()
+        console.log(today.getFullYear()); // year
+        console.log(today.getMonth()); // month
+        console.log(today.getDay()); // day of the week 0-6
+        console.log(today.getDate()); // day of the month
+        console.log(today.getHours()); //hours
+        console.log(today.getMinutes()); // minutes
+        console.log(today.getSeconds()); //seconds
+        console.log(today.getMilliseconds()); //1000 milliseconds = 1 second
+        
+        // 3: SETTING DATES COMPONENT
+        // You can also cgange dates values
+        let christmas = new Date()
+        christmas.setFullYear(2030);
+        christmas.setMonth(11);
+        christmas.setDate(25);
+        console.log("By 2030 christmas is on", christmas);
+
+        // 4: DATES METHOD
+        // Some common dates method
+        let d = new Date() 
+        console.log(d.toDateString());
+        console.log(d.toTimeString());
+        console.log(d.toLocaleDateString());
+        console.log(d.toLocaleTimeString());
+
+        // 5: WORKING WITH TIME
+        // You can do maths with dates
+        let start = new Date();
+        let end = new Date("2025-12-31"); 
+        // Difference in milliseconds
+        let difference = start - end;
+        console.log(difference);
+        // Convert to days
+        let days = Math.floor(difference/(1000*60*60*24))
+        console.log(days + " days left in the year");
+        let day = Math.floor(difference/(2000*100*100*50))
+        console.log(day);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaSript Index (Indices)</h1>
+    <p>Every character in a string has a position(index)</p>
+    <p>Indexing starts at zero(0) in javascript</p>
+    <h2>Why do we use indexes</h2>
+    <ul>
+        <li>It is used to get specfic characters</li>
+        <li>It is used to find where a letter or word is</li>
+        <li>It is used to check if something is there or not</li>
+    </ul>
+    <h2>Key String Methods For Index</h2>
+    <ol>
+        <li>charAt()- returns the character at that position</li>
+        <li>indexOf()- returns the index(position) of the first occurence</li>
+        <li>lastIndexOf()- It returns the last occurence of the word appears more than once</li>
+    </ol>
+
+    <script>
+        const x = "JavaScript is a blah ";
+
+        // Using charAt()
+        console.log(x.charAt(0)); // J
+        console.log(x.charAt(8)); // p
+        console.log(x.charAt(100)); // "" (empty string)
+        console.log(x.charAt(10)); // the empty space
+        console.log(x.charAt(11)); // i
+        
+        
+
+        // recommended
+        console.log(x[5]); // c
+        console.log(x[100]); // undefined (if the character is out of range)
+        console.log(x[14]);
+
+        // Using indexOf(searchValue, fromIndex?)
+        const fruits = "Banana, Mango, Guava, WaterMelon";
+        console.log(fruits.indexOf("a")); // 1
+        console.log(fruits.indexOf("a", 22)); // 25 (search for "a" starting from index 22)
+        console.log(fruits.indexOf("na")); // 2
+        console.log(fruits.indexOf("Z")); // -1 (not found)
+        console.log(fruits.indexOf("b")); // -1 (not found)
+        console.log(fruits.indexOf("v", 5)); // 18 (search for "v" starting from index 5)
+        console.log(fruits.indexOf("v", 22)); // -1 (search for "v" starting from index 22, not found)
+        console.log(fruits.indexOf("v", 22)); // -1 ("v" does not exist from index 22 forward)
+
+        // Using lastIndexOf()
+        console.log(fruits.lastIndexOf("a"));
+        console.log(fruits.lastIndexOf("n"));
+        console.log(fruits.lastIndexOf("na"));
+
+        // Using includes() - it checks if a char exist (returns/false)
+        console.log(fruits.includes("W")); // true
+        console.log(fruits.includes("z")); // false
+        console.log(fruits.includes("A")); // false
+        console.log(fruits.includes("")); // true
+
+        // slice(start,end) - extracts a substring from start up to end (but excluding the end)
+        const greetUs = "Hello World!";
+        console.log(greetUs.slice(0,7));
+        console.log(greetUs.slice(3,8));
+        console.log(greetUs.slice(6));
+
+        // ASSINGMENT
+        const ass1 = "developer";
+        // Find the index of the first "e"
+        // Find the index of the last "e"
+        // Get the substring "lope" using slice
+
+        const ass2 = "mississippi";
+        // How many times does "s" appear?
+        // Find the index of the secomd "i"
+        console.log(ass2.split("s").length-1);
+
+        const ass3 = "FrontEnd";
+        // Does ass3 includes "end"? (true/false)
+        // What is ass3.charAt(0)? ass3.charAt[0]?
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

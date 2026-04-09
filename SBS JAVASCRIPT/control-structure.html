@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 2000px;
+        }
+        .ageSection, .grade-checker{
+            margin-left: 100px;
+            border-radius: 20px;
+            margin-top: 40px;
+            margin-left: 100px;
+            text-align: center;
+            width: 300px;
+            height: 200px;
+            box-shadow: 10px 10px 20px blue;
+            transform: perspective(800px) rotateY('15deg');
+            transition: transform 0.4s ease;
+            border: 2px solid rgb(75, 200, 216);
+        }
+
+        .ageSection:hover, .grade-checker:hover{
+            transform: perspective(800px) rotateY(0deg) scale(1.05);
+        }
+
+        .ageSection h1{
+            text-transform: capitalize;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .ageSection button, .grade-checker button{
+            border-radius: 10px;
+            padding: 5px;
+            background: black;
+            color: white;
+            cursor: grab;
+        }
+
+        .ageSection input, .grade-checker input{
+            padding: 10px;
+            border-radius: 50px 50px 50px;
+        }
+
+        .ageSection h2, .grade-checker p{
+            font-style: italic;
+            /* text-decoration: overline; */
+            /* border: 2px dotted indigo */
+        }
+    </style>
+</head>
+<body>
+    <h1>Control structure</h1>
+    <p>Control structure helps us make decision and repeat actions in our code.
+        Without them, 
+        our programs would just run line with no
+        logic. There are 3 main types 
+    </p>
+    <ol>
+        <li>Conditional-Statement- if, else if, else, switch</li>
+        <li>Loops - for, while, do....while</li>
+        <li>Branching statement - break, continue, return </li>
+    </ol>
+
+    <h1>Conditional Statements- conditional statements allow our 
+        program to make decisions. It checks if something is true or false, 
+        then runs the right code</h1>
+    <p>Real-Life example:"if it rains, i will take an umbrella, else, i won't </p>
+
+
+    <section class="ageSection">
+        <h1>Check age requirement</h1>
+        <input type="number" id="ageInput" placeholder="Enter your age">
+        <button onclick="checkAge()">check</button>
+        <h2 id="result"></h2>
+    </section>
+
+
+    <h2>else if</h2>
+    <h3>Flow of execution</h3>
+    <ol>
+        <li>check the first condition (if) -if it's true,stop there and run that block.</li>
+        <li>if it's not true,move to the next (else if) - if it's true, run it and stop</li>
+        <li>if none match, finally run the else</li>
+    </ol>
+
+    <section class="grade-checker">
+        <h2>Grade Checker</h2>
+        <input type="number" id="scoreInput" placeholder="Enter your fucking score">
+        <button onclick="checkGrade()">check</button>
+        <p id="result2"></p>
+    </section>
+
+    <script>
+        function checkAge(){
+            let age = document.getElementById('ageInput').value
+        
+        if(age >= 18){
+            document.getElementById("result").innerHTML="you are an adult ✅."
+        }else{
+            document.getElementById('result').innerHTML="you are a minor ❌"
+        }
+        }
+
+
+
+
+        function checkGrade(){
+            let score = document.getElementById('scoreInput').value
+            score = Number(score);
+
+            if (score >= 70) {
+                document.getElementById('result2').innerText ="Grade: A 🎉"
+            }else if (score >= 50){
+                document.getElementById('result2').innerText ="Grade: B 💖 "
+            } else if (score >= 40){
+                document.getElementById('result2').innerText ="Grade: c 😂"
+            } else{
+                document.getElementById('result2').innerText ="Grade: f 💔🙉🙉"
+            }
+
+        }
+    </script>
+</body>
+</html>

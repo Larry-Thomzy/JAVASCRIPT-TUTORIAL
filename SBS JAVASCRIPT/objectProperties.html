@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Flags and Descriptors</title>
+</head>
+<body>
+
+    <h1>Property Flags and Descriptors</h1>
+
+    <p>
+        As we know, objects can store properties.
+    </p>
+
+    <p>
+        Until now, a property was a simple <strong>key–value</strong> pair to us.
+        But an object property is actually a more flexible and powerful thing.
+    </p>
+
+    <p>
+        In this chapter we’ll study additional configuration options, and in the next
+        we’ll see how to invisibly turn them into getter/setter functions.
+    </p>
+
+    <h2>Property Flags</h2>
+
+    <p>
+        Object properties, besides a value, have three special attributes
+        (so-called <em>“flags”</em>):
+    </p>
+
+    <ul>
+        <li>
+            <strong>writable</strong> – if <code>true</code>, the value can be changed;
+            otherwise it’s read-only.
+        </li>
+        <li>
+            <strong>enumerable</strong> – if <code>true</code>, the property is listed in loops;
+            otherwise it is not listed.
+        </li>
+        <li>
+            <strong>configurable</strong> – if <code>true</code>, the property can be deleted
+            and its attributes can be modified; otherwise not.
+        </li>
+    </ul>
+
+    <p>
+        We didn’t see them yet because generally they do not show up.
+        When we create a property in the usual way, all of them are set to <code>true</code>.
+        However, we can change them at any time.
+    </p>
+
+
+    <script>
+        console.log("Larry Page was here");
+
+        const fruits = [
+            ["apples", 300],
+            ["bananas", 200],
+            ["pears", 100]
+        ];
+
+        const myObj = Object.fromEntries(fruits); // Converts array of key-value pairs into an object
+        console.log(myObj);
+
+
+        // let descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
+        // this code allows to query the full information about a property.
+
+        let descriptor = Object.getOwnPropertyDescriptor(myObj, "bananas");
+        console.log(descriptor);
+
+        // obj:
+        // The object to get information from.
+        // propertyName:
+        // The name of the property.
+        // The returned value is a so-called “property descriptor” object: it contains the value and all the flags.
+
+
+        // To change the flags, we can use Object.defineProperty.
+
+        // The syntax is:
+
+        // Object.defineProperty(obj, propertyName, descriptor)
+        // obj, propertyName
+        // The object and its property to apply the descriptor.
+        // descriptor
+        // Property descriptor object to apply.
+        // If the property exists, defineProperty updates its flags. Otherwise, it creates the property with the given value and flags; in that case, if a flag is not supplied, it is assumed false.
+
+        // For instance, here a property name is created with all falsy flags:
+
+
+        let user = {};
+
+        Object.defineProperty(user, "name", { 
+        value: "John",
+        "writable": true
+        });
+
+        descriptor = Object.getOwnPropertyDescriptor(user, "name");
+        console.log(descriptor);
+
+        // NON WRITABLE 
+        // Let’s make user.name non-writable (can’t be reassigned) by changing writable flag:
+
+        user = {
+        name: "John"
+        };
+
+
+
+        Object.defineProperty(user, "name", {
+        writable: false
+        });
+
+        user.name = "Pete"; // Error in strict mode
+        console.log(user.name); // John
+
+
+        // NON - ENUMERABLE
+        // By default, properties created via defineProperty are non-enumerable.
+        // Now let’s add a custom toString to user.
+
+        // Normally, a built-in toString for objects is non-enumerable, it does not show up in for..in. 
+        // But if we add a toString of our own, then by default it shows up in for..in, like this:
+
+        user = {
+        name: "John",
+        toString() {
+            return this.name;
+        }
+        };
+
+        // By default, both our properties are listed:
+        for (let key in user) 
+        console.log(key); // name, toString
+        // Now make it non-enumerable:
+
+        // NON - CONFIGURABLE
+        // A non-configurable property can’t be deleted, its attributes can’t be modified once set to false.
+        // For instance, Math.PI is non-writable, non-enumerable and non-configurable:
+
+        let PIdescriptor = Object.getOwnPropertyDescriptor(Math, 'PI');
+        console.log(PIdescriptor);
+
+        // Math.PI = 4.18; // Error in strict mode
+        // console.log(Math.PI); // 3.141592653589793
+
+        // Object.defineProperty(Math, "PI", {
+        // writable: true,
+        // configurable: false
+        // });
+        // Math.PI = 4.18; // Error in strict mode
+        // console.log(Math.PI); // 3.141592653589793
+
+        // delete Math.PI; // Error in strict mode
+        // console.log(Math.PI); // 3.141592653589793
+
+
+        
+    </script>
+
+</body>
+</html>

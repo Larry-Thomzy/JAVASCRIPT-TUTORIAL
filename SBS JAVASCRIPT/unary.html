@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>   5 + 3 + 2 
+<body>
+    <h1>Unary Operators.</h1>
+    <p>Unary Operators are operators that work on a single operands (one value or variable). <br> They perform operations like decrement, increment, type convertion, logical negation etc.</p>
+    <h2>Common Unary Operators in Javascript.</h2>
+    <ol>
+        <li>
+            <h4>Increment (++)</h4>
+            <p>Increases a number by 1.</p>
+        </li>
+
+        <li>
+            <h4>Decrement (--)</h4>
+            <p>Decreases a number by 1.</p>
+        </li>
+
+        <li>
+            <h4>Unary Plus (+)</h4>
+            <p>Converts its operand into a number.</p>
+        </li>
+
+        <li>
+            <h4>Unary Negation</h4>
+            <p>Converts its operand into a number, then negates it.</p>
+        </li>
+
+        <li>
+            <h4>Logical NOT (!)</h4>
+            <p>Converts the operand to a boolean and inverts it.</p>
+        </li>
+
+        <li>
+            <h4>Bitwise NOT (~)</h4>
+            <p>Inverts all the bits of a number. <br> Formula: ~n = -(n+1).</p>
+            <p>It flips all the bits (0s becomes 1s, 1s becomes 0s).</p>
+        </li>
+
+        <li>
+            <h4>typeof</h4>
+            <p>Returns the type of a variable as a string.</p>
+        </li>
+
+        <li>
+            <h4>Delete</h4>
+            <p>Removes a property from and object.</p>
+        </li>
+
+        <li>
+            <h4>Void</h4>
+            <p>Evaluates an expression and returns undefined.</p>
+        </li>
+    </ol>
+
+    <script>
+        // 1. Increment (++)
+        let x = 5;
+        x++; // post-increment: use value first, then add 1
+        console.log(x); // 6
+
+        let y = 5;
+        ++y; // pre-increment: add 1 first, then use value
+        console.log(y); // 6
+        
+        // 2. Decrement (--)
+        let a = 10;
+        a--; // Post-decrement
+        console.log(a);
+        
+        let b = 10;
+        --b; // pre-increment
+        console.log(b);
+        
+        // 3. Unary Plus (+) 
+        console.log(+ "5"); // 5 (string to number)
+        console.log(+ true); // 1 (boolean to number)
+        console.log(+ false); // 0 (boolean to number)
+        console.log(+ "Hi"); // NaN
+        
+        // 4. Unary Negation
+        console.log(- "5"); // -5
+        console.log(- true); // -1
+        console.log(- false); // -0
+        
+        // 5. Logical NOT
+        console.log(!true); // false
+        console.log(!false); // true
+        console.log(!0); // true
+        console.log(!""); // true
+        console.log(! "Hi"); // false
+        
+        // 6. Bitwise NOT (~)
+
+        
+        
+        // 7. typeof
+        console.log(typeof 123); // "number"
+        console.log(typeof "collins"); // "string"
+        console.log(typeof true); // "boolean"
+        console.log(typeof {}); // "object"
+        console.log(typeof null); // "object"
+        console.log(typeof undefined); // "undefined"
+        
+        // 8. Delete
+        let object = {
+            name: "zainab",
+            age: 18,
+            gender: "Female",
+            isStudent: true
+        };
+        delete object.age;
+        console.log(object);
+        
+        // 9. Void
+        console.log(void 0); // undefined
+        console.log(void (5+5)); // undefined
+    </script>
+</body>
+</html>

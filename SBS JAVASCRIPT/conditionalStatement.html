@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conditional Statement Example</title>
+</head>
+<body>
+  <h2>Check Age</h2>
+  <input type="number" id="ageInput" placeholder="Enter your age">
+  <button onclick="checkAge()">Check</button>
+  <p id="result"></p>
+
+
+  <h2>Grade Checker</h2>
+  <input type="number" id="scoreInput" placeholder="Enter your score">
+  <button onclick="checkGrade()">Check</button>
+  <p id="result"></p>
+
+  <script>
+    function checkAge() {
+      let age = document.getElementById("ageInput").value;
+
+      if (age >= 18) {
+        document.getElementById("result").innerText = "You are an adult ✅";
+      } else {
+        document.getElementById("result").innerText = "You are a minor ❌";
+      }
+    }
+
+
+    function checkGrade() {
+      let score = document.getElementById("scoreInput").value;
+      score = Number(score);
+
+      if (score >= 70) {
+        document.getElementById("result").innerText = "Grade: A 🎉";
+      } else if (score >= 50) {
+        document.getElementById("result").innerText = "Grade: B 🙂";
+      } else if (score >= 40) {
+        document.getElementById("result").innerText = "Grade: C 😅";
+      } else {
+        document.getElementById("result").innerText = "Grade: F 😢";
+      }
+    }
+  </script>
+</body>
+</html>

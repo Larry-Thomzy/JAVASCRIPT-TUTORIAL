@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Truthy and Falsy Values</h1> 
+   <p>In Javascript, every value is considered Truthy (Evaluates to true) or Falsy (Evaluates to false) when used in a boolean context (Like inside if, while, logical operators, etc.).</p>
+   <h2>Falsy values.</h2>
+   <p>These are the values that evaluates the false in a boolean context. There are only 7 falsy values in Javascript:</p>
+   <ol>
+    <li>false</li>
+    <li>0</li>
+    <li>-0 (negative 0)</li>
+    <li>0n (BigInt zero)</li>
+    <li>"" (empty string)</li>
+    
+    <li>null</li>
+    <li>undefined</li>
+    <li>NaN (Not a Number)</li>
+   </ol>
+   <h4>Any other value is Truthy.</h4>
+   <h2>Truthy values</h2>
+   <p>Everything else apart from the 7 falsy values is Truthy</p>
+   <h4>Examples</h4>
+   <ul>
+    <li>"Hello" (non empty string).</li>
+    <li>42 (any non zero number)</li>
+    <li>-42</li>
+    <li>3.14</li>
+    <li>[] (empty array)</li>
+    <li>{} (empty object)</li>
+    <li>function() {}</li>
+   </ul>
+
+   <script>
+    // EXAMPLES:
+    // you can test truthy/falsy with Boolean():
+    console.log(Boolean("")); // false
+    console.log(Boolean("Hello")); // truth
+    console.log(Boolean(0)); // false
+    console.log(Boolean(100)); // true
+    console.log(Boolean([])); // true
+    console.log(Boolean({})); // true
+    console.log(Boolean(null)); // false
+    console.log(Boolean(undefined)); // false
+    console.log(Boolean(-19)); // true
+    console.log(Boolean(function() {})); // true
+    
+    
+    
+    
+    
+    
+    
+    
+   </script>
+</body>
+</html>

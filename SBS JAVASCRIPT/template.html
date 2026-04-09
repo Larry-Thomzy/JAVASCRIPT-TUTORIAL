@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Template Literals</h1>
+    <p>Template Literals are a modern way to work with strings.</p>
+    <p>They use backticks (``) instead of quotes ("" or '').</p>
+    <h2>Features of Template Literals</h2>
+    <ol>
+        <li>String Interpolation &rarr; You can insert variables inside a string using ${...}.</li>
+        <li>Multiline Strings </li>
+        <li>Expressions inside strings &rarr; You can run javascript expressions inside ${...}.</li>
+        <li>Function calls inside Template Literals.</li>
+    </ol>
+
+    <script>
+        // EXAMPLE 1: STRING INTERPOLATION
+        let name = "Zainab Alajekoko"
+        let age = 89
+        let hobbies = "bullying my brother, watching movies, listening to songs, and ejo."
+        let favouriteFood = "Epo, iru, ekuru, eko, eyin, ori eyan, epon aja"
+        let music = "password, panic, soulmate, love don't cost a dime, cry"
+        console.log(`My name is ${name} and i am ${age} years old. My hobbies are ${hobbies}. My favourite foods are ${favouriteFood}. My musics are ${music}`);
+
+        // EXAMPLE 2: 
+        let poem = `Roses are red, 
+        violet are blue, 
+        i love coding 
+        and so do you.`
+        let poem2 = `Roses are red, 
+        violet are blue, 
+        i search for poverty 
+        and i saw you.`
+        console.log(poem);
+        console.log(poem2);
+        
+        // EXAMPLE 3
+        let a = 5
+        let b = 10
+        console.log(`The sum of ${a} and ${b} it gives us ${a + b}`);
+        console.log(`when we multiply ${a} * ${b} it gives us ${a * b}`);
+        console.log(`When we remove ${a} - ${b} it gives you ${a - b}`);
+        
+        
+        
+        // EXAMPLE 4:
+        function greet(name) {
+            return `Hello ${name}!`
+        }
+        console.log(`${greet("Essa")}, welcome back`);
+        
+        
+    </script>
+</body>
+</html>

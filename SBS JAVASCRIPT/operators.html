@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Operators</h1>
+    <p>Operators are symbols that perform actions on values (called operands)</p>
+    <p>numbers in an arithmetic operator is called OPERANDS</p>
+
+    <h2>TYPES OF OPERATORS IN JS</h2>
+    <ol>
+        <li>ARITHMETIC OPERATORS &rarr; Used for basic maths<li>
+        <li>ASSIGNMENT OPERATORS (=) &rarr; Used to assign values</li>
+        <li>COMPARISON OPERATORS &rarr; Used to compare values (returns true/false)</li>
+        <li>LOGICAL OPERATORS &rarr; Used to combine conditions(AND, OR, NOT)</li>
+        <li>INCREMENT / DECREMENT OPERATOR</li>
+    </ol>
+
+    <script>
+        // 1. ARITHMETIC OPERATORS
+        let a = 10;
+        let b = 3;
+        console.log(a+b);
+        console.log(a-b);
+        console.log(a/b);
+        console.log(a*b);
+        console.log(a%b); //remainder or modulus
+        console.log(a**b); //exponentiation - a raised to b
+
+        //2. ASSIGNMENT OPERATORS (=)
+        let x = 5;
+        console.log(x += 3);
+        console.log(x -= 2);
+        console.log(x *= 6);
+        console.log(x /= 3);
+        console.log(x %= 7);
+
+        // 3. COMPARISON OPERATORS (==, ===, !=, >, <, >=, <=)
+        console.log(a == b); //equal to
+        console.log(a != b); //not equal
+        console.log(a > b); //greater than
+        console.log(a < b); //less than
+        console.log(a >= b); //greater or equals
+        console.log(a <=  b); // less than or equal
+        console.log(a === b); //strict equality, checks data type
+        console.log(a !== b); // strict not equal because type is different
+
+        // 4. LOGICAL OPERATORS - USED TO COMBINE CONDITIONS (AND, OR, NOT)
+        let age = 20;
+        let hasId = true;
+        console.log(age > 18 && hasId); //both must be true
+        console.log(age > 18 || hasId); //atleast one is true
+        console.log(!hasId); //reverses true or false 
+        
+        // 5. INCREMENT / DECREMENT OPERATOR
+        let n = 5;
+        console.log(n++); //post-increment - shows first, then adds 1
+        console.log(n);
+        
+        console.log(++n); //pre-increment - adds 1, then shows
+        console.log(n--); //post-decrement 
+        console.log(--n); //pre-decrement
+        
+        
+    </script>
+</body>
+</html>

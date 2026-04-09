@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing_Javascript</title>
+</head>
+<script defer>
+    let password= "TheMaster";
+    let user = prompt("Enter your role ?");
+    if (user == "Admin") {
+        let pass = prompt ("Enter Password ?");
+        if (!pass){
+            alert("Canceled !");
+        }
+        else if(pass == password) {
+            alert("Welcome !");
+        }
+        else{
+            alert("Wrong Password");
+        }
+    }
+    else if (user == "" || user == null){
+        alert("Canceled");
+    }
+    else {
+        alert("I don't fvcking Know You");
+    }
+
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript String Concatenation</h1>
+    <p>String concatenaion means joining two or more strings together. </p>
+    <h2>ways to concatenate strings</h2>
+    <ol>
+        <li>Using the "+" operator</li>
+        <li>Using the "+=" operator &rarr; used to add and assign at the same time.</li>
+        <li>Using template literals (recommended)</li>
+    </ol>
+
+    <script>
+        let firstName = "folarin ";
+        let SecondName = "oyelakin ";
+        let middleName = "salem";
+        let fullName = firstName + SecondName + middleName;
+        console.log(fullName);
+
+        // Using + operator
+        let greeting = "Hello " + "World";
+        console.log(greeting);
+
+        // Using += operator
+        let text = "i love ";
+        text += "JavaScript";
+        console.log(text);
+        
+        //using template literals ${} (always use backtick for template literals)
+        let name = "folarin";
+        let language = "python";
+        console.log(`Hi ${name}, Welcome to ${language}`); 
+        
+        let myName = "joy is coming"
+        console.log(`hello ${myName}`);
+        
+        let food = "rice"
+        let drink = "orange Juice"
+        console.log(`i ate ${food} and drank ${drink}`);
+
+        //you can do math inside
+        let x = 5;
+        let y = 10;
+        console.log(`The sum of ${x} and ${y} is ${x+y}`);
+
+        console.log(`The difference between ${x} and ${y} is ${x-y}`);
+
+        console.log(`The Product of ${x} and ${y} is ${x*y}`);
+
+        console.log(`When ${x} is divided by ${y} the result is ${x/y}`);
+
+        console.log(`The remander when ${x} is divided by ${y} is ${x%y}`);
+
+        let fruit = "mango";
+        console.log(`i love ${fruit}` );
+
+        let favouriteAnimal = "Black Panther";
+        console.log(`my favourite animal is ${favouriteAnimal}`);
+         
+        
+    </script>
+
+</body>
+</html>

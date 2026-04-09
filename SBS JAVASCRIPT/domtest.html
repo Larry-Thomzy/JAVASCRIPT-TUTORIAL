@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .style{
+            font-size: 30px;
+            border-left: 2px solid #333;
+        }
+        .button1{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="button1" id="btn1">see me</button>
+    <!-- Example 1 -->
+    <h1 id="heading1">DOM Examples</h1>
+    <button onclick="heading1()">Click me!</button>
+
+    <!-- Example 2 -->
+    <p class="text">This is a paragraph</p>
+    <p class="text">This is another paragraph</p>
+
+    <!-- Example 3 -->
+    <h2 id="header">Welcome To Class</h2>
+
+    <!-- Example 4 -->
+    <p id="P3">Manipulating Element</p>
+    <button id="btn">Click Here!</button>
+
+    <p id="p4">Write Something in it.</p>
+
+    <p id="p5">hi 👋😙</p>
+
+    <!-- Example 5 -->
+    <input type="text" id="input">
+    <p id="output"></p>
+
+
+
+    <script>
+        // Select by id
+        function heading1() {
+            let h1 = document.getElementById("heading1");
+            h1.style.backgroundColor = "red";
+            h1.style.color = "yellow";
+            h1.style.padding = "20px";
+            h1.style.textDecoration = "underline";
+        }
+        
+        // Select by className
+        let paragraphs = document.getElementsByClassName("text");
+        paragraphs[0].style.color = "blue";
+        paragraphs[1].style.textDecoration = "line-through";
+        
+        // Select by tagName
+        document.getElementsByTagName("h2")[0].style.backgroundColor = "pink";
+
+        // Select by querySelector
+        document.querySelector(".text").style.fontStyle = "italic";
+
+        // select all using querySelectorAll
+        document.querySelectorAll(".text").forEach(p => p.style.color = "green");
+
+        // Using innerText
+        let p3 = document.getElementById("P3");
+        let button = document.getElementById("btn");
+
+        button.onclick = function() {
+            p3.innerText = "Text has been changed using js";
+            p3.style.color = "red"
+        }
+
+        // using innerHTML
+        document.getElementById("p4").innerHTML = "<em>Thanks for writing something</em>"
+
+        // Using textContent
+        document.getElementById("p5").textContent = "";
+
+        // Using classList.add/remove/toggle
+        document.getElementById("p4").classList.add("style");
+
+        button.classList.remove("button")
+
+        let firstBtn = document.getElementById("btn1")
+        firstBtn.classList.remove("button1")
+
+        // Using Event Listener
+        firstBtn.addEventListener("click", () => {
+            firstBtn.textContent = "Button has been clicked!";
+            firstBtn.style.background = "plum";
+            firstBtn.style.padding = "20px";
+        })
+
+        let input = document.getElementById("input");
+        let output = document.getElementById("output");
+
+        input.addEventListener("input", () => {
+            output.textContent = "You typed: " + input.value;
+            output.style.color = "green";
+        })
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

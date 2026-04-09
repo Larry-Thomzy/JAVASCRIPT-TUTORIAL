@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hoisting.</h1>
+    <p>Hoisting is Javascript's default behaviour of moving declarations to the top of their scope (before code execution). <br> Note: Only declarations are hoisted, not initialization.</p>
+    <p>You can log a variable before defining it, but the behaviour depends on how You declared it (var, let, const).</p>
+
+    <script>
+        // 1. Example with var
+        console.log(a); // output: undefined
+        var a = 5;
+  
+
+        
+
+        var b; // declaration hoisted to the top
+        console.log(b); // undefined
+        b = 2; // initialization stays here
+        console.log(b);
+        
+
+        // Example 2: with let and const
+    //    console.log(c); // reference error
+        let c = 18; // not accessible before declaration
+
+        // Example 3: 
+        sayHello();
+
+        function sayHello() {
+            console.log("Hello class");
+        }
+
+        sayHello();
+    </script>
+</body>
+</html>

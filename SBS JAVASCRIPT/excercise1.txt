@@ -1,0 +1,110 @@
+1. Student Grade Analyzer
+
+Create an array of student scores.
+
+Loop through the array
+Use operators to calculate total and average
+Use if/else to assign grades (A, B, C…)
+Use a switch statement to print feedback for each grade
+
+-------------------------------------
+
+2. Shopping Cart System
+
+Given an array of item prices:
+
+Loop through items to calculate total cost
+Use operators to apply a discount (e.g., 10% if total > 100)
+Use if/else to check if discount applies
+Use switch to apply different tax rates based on category
+
+-------------------------------------
+
+
+3. Number Classification Tool
+
+Given an array of numbers:
+
+Loop through the array
+Use operators to check even/odd
+Use if/else to classify as positive, negative, or zero
+Use switch to categorize number ranges (small, medium, large)
+
+-------------------------------------
+
+4. Simple Voting System
+
+Given an array of votes (strings):
+
+Loop through votes
+Use if/else to count valid vs invalid votes
+Use operators to tally totals
+Use switch to count votes per candidate
+
+-------------------------------------
+
+5. Login Attempt Checker
+
+Given an array of login attempts:
+
+Loop through attempts
+Use operators to compare username/password
+Use if/else to validate login
+Use switch to handle roles (admin, user, guest)
+
+-------------------------------------
+
+
+6. Temperature Monitor
+
+Given an array of temperatures:
+
+Loop through values
+Use operators to convert Celsius to Fahrenheit
+Use if/else to detect extreme temperatures
+Use switch to classify weather (cold, warm, hot)
+
+-------------------------------------
+
+7. Multiplication Table Generator
+
+Given an array of numbers:
+
+Loop through numbers
+Use operators to generate multiplication tables
+Use if/else to check if result is even or odd
+Use switch to label difficulty level (easy, medium, hard)
+
+-------------------------------------
+
+8. Bank Transaction System
+
+Given an array of transactions (+ for deposit, - for withdrawal):
+
+Loop through transactions
+Use operators to update balance
+Use if/else to detect overdraft
+Use switch to classify transaction type
+
+-------------------------------------
+
+
+9. Product Inventory Checker
+
+Given an array of product quantities:
+
+Loop through products
+Use operators to update stock
+Use if/else to check low stock
+Use switch to categorize stock levels (low, medium, high)
+
+-------------------------------------
+
+10. Game Score Tracker
+
+Given an array of player scores:
+
+Loop through scores
+Use operators to calculate total and highest score
+Use if/else to determine winner
+Use switch to assign rank titles (Beginner, Pro, Expert)

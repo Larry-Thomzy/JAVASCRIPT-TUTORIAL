@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+        text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Error Handling</h1>
+    <p>Error handling means detecting, catching, and responding to errors so your app doesn't crash or stop working.</p>
+    <h2>Ways to handle errors in Javascript.</h2>
+    <ol>
+        <li>try...catch.
+            <p>Code inside try runs</p>
+            <p>If an errors happens, the catch block runs instead of crashing the program.</p>
+        </li>
+        <li>Finally.
+            <p>Runs whether an error happens or not</p>
+        </li>
+
+        <li>Throw (custom errors)
+            <p>You can create your own errors with throw.</p>
+        </li>
+        
+        <li>Error Handling in Promises
+            <p>When using promises, use .catch().</p>
+        </li>
+        
+        <li>Error Handling with Async/Await.
+            <p>Wrap Async code in try...catch.</p>
+        </li>
+    </ol>
+
+    <script>
+        // EXAMPLE 1: TRY...CATCH
+        try {
+            let num = 10 / 0;
+            console.log(num);
+            
+            // force an error
+            console.log(undeclaredVar);
+        }catch (error) {
+            console.log("Oops! Something went wrong", error.message);
+            
+        }
+
+        // EXAMPLE 2: FINALLY
+        try {
+            console.log("Opening File...");
+            throw new Error("File not found!")
+            
+        }catch (error) {
+            console.log("Error:", error.message);
+        }finally {
+            console.log("Closing File...");
+            
+        }
+
+        // EXAMPLE 3: THROW
+        function checkAge(age) {
+            if (age < 18 ) {
+                throw new Error ("You must be 18 or older")
+            }
+            return "Access Granted ✅"
+        }
+        try {
+            console.log(checkAge(11));
+        }catch (error) {
+            console.log(error.message);
+        }
+
+        // EXAMPLE 4: ERROR HANDLING IN PROMISES
+        let promise = new Promise ((_, reject) => {
+            reject("Server is down ❌");
+        });
+        promise.catch(error => console.log(error)); 
+        
+        // EXAMPLE 5: ERROR HANDLING WITH ASYNC/AWAIT
+        async function fetchData() {
+            try {
+                let response = await fetch("Invalid URL");
+                let data = await response.json();
+                console.log(data);
+            }catch(error) {
+                console.log(error.message);
+            }
+        }
+        fetchData()
+    </script>
+</body>
+</html>

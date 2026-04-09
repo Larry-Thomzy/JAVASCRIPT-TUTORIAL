@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta programming</title>
+</head>
+<body>
+    <h1>Meta Programming</h1>
+    <p>
+        Meta programming refers to a number of ways a program can manipulate itself
+    </p>
+
+    <ul>
+        <li>
+            modify object at run time
+        </li>
+
+        <li>
+            inspect object at run time
+        </li>
+
+        <li>
+            control object at run time
+        </li>
+
+        <li>
+            intercept running operations
+        </li>
+
+        <li>
+            modify function and classes
+        </li>
+
+        <li>
+            Dynamic code
+        </li>
+    </ul>
+
+    <h1>Proxy Meta Programming</h1>
+    <h2>What is proxy</h2>
+    <p>
+        Aproxy is a wrapper arround another object (called the target) that lets you intercept and customize fundamental operations like:
+    </p>
+
+    <ul>
+        <li>
+            Reading a property(get)
+        </li>
+
+        <li>
+            Writting a property(set)
+        </li>
+
+        <li>
+            checking if property exist(has)
+        </li>
+
+        <li>
+            Deleting a property(deleteProperty)
+        </li>
+
+        <li>
+            calling as function(apply)
+        </li>
+
+        <li>
+            constructing with new (construct)
+        </li>
+
+        <li>
+            And many more
+        </li>
+    </ul>
+
+    <script type="text/javascript">
+
+        // Modifying Object
+        const person = {
+            name:"John",
+            age:41
+        };
+        
+        Object.defineProperty(person,"name",{get () {
+            return "secret";
+        }});
+
+        let name = person.name;
+        console.log(name);
+
+        // generate dynamic code
+        const fn = new Function(
+            "a","b","return a * b"
+        );
+        let a = 9
+        let b = 6
+        console.log(fn(a,b))
+
+        // proxy
+
+        const user = {
+            name: "Victor",
+            age:40
+        };
+
+        // lets wrap the object in a proxy
+        
+        const proxy = new Proxy(user, {
+            // we will use a set trap
+            set(target,property,value) {
+                // log changes
+                console.log(property+ ": " + value);
+                return target[property];
+            }
+        });
+
+        // change property
+
+        proxy.name = "John";
+        proxy.age = 45;
+        proxy.name = "paul";
+
+        //proxy with reflect
+
+        // reflect makes proxy behaviour match normal object behaviour
+
+        const user2 = {
+            name: "Daniel",
+            age:41
+        };
+
+        // lets wrap the object in a proxy
+        
+        const proxy2 = new Proxy(user, {
+            // we will use a set trap
+            set(target,property,value) {
+                // log changes
+                console.log(property+ ": " + value);
+                // safe forwarding with reflect
+                return Reflect.set(target,property,value)
+            }
+        });
+
+        proxy2.name = "tunde";
+        proxy2.age = 99;
+        proxy2.name = "folarineeee";
+
+    </script>
+</body>
+</html>

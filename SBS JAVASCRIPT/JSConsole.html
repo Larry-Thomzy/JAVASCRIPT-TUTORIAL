@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgb(255, 255, 255);
+            border-bottom: 2px solid;
+            margin-left: -10px;
+            box-shadow:  0 4px 8px;
+            /* background: hotpink; */
+
+        }
+        header h1{
+            text-decoration: overline underline hotpink;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            color: purple;
+        }
+        ol{
+            border: 10px dotted hotpink;
+            padding: 20px;
+            color: rgb(168, 7, 61);
+        }
+        ol li{
+            margin: 10px;
+        }
+        .playground{
+            font-family: cursive;
+            background: #f8f9;
+            color: #333;
+            border-radius: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+         /* .btn-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:left;
+            align-items: center;
+            width: 70%;
+            padding: 20px;
+        }  */
+        /* .btn-container:hover{
+            border: 20px dashed purple;
+        } */
+        button{
+            margin: 6px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background: palevioletred;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background: rgb(122, 17, 52);
+            box-shadow: 0 4px 8px rgb(122, 17, 52);
+        }
+        .practice-area{
+            width: 90%;
+            margin-top: 30px;
+            max-width: 600px;
+            background: plum;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px;
+            padding: 20px;
+        }
+        textarea{
+            width: 90%;
+            height: 120px;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: monospace;
+            outline: none ;
+        }
+        textarea:focus{
+            border: 2px solid blueviolet;
+            box-shadow: 0 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+     <h1>JavaScript Console 💻 🎀</h1>
+    </header>
+
+    <p>The Console is a built-in JavaScript object that lets you output messages, test values, and debug code.</p>
+    <p>It tells you what's happening inside your code.</p>
+
+    <h2>Common Console Methods</h2>
+    <ol>
+        <li>
+            console.log() &rarr; Prints general info or message.
+            <br> ✅ Most commonly used for debugging and testing output.
+        </li>
+        <li>
+            console.error() &rarr; Displays error messages in red (indicating something went wrong).
+            <br> ✅ Helps you point out where bugs occur.
+        </li>
+        <li>
+            console.warn() &rarr; Displays warning (in yellow or orange).
+            <br> ✅ Used when something isn't an error but still needs attention.
+        </li>
+        <li>
+            console.info() &rarr; Displays informational messages (looks like log, but labelled as "info" in some browsers).
+        </li>
+        <li>
+            console.table() &rarr; Displays data in a neat table format (super useful for arrays or objects).
+        </li>
+        <li>
+            console.clear() &rarr; Clears the console screen.
+        </li>
+        <li>
+            console.count() &rarr; Counts how many times a label has been logged.
+        </li>
+        <li>
+            console.group()/console.groupEnd() &rarr; Groups related logs together.
+            <br> ✅ Helps organize console output when debugging complex scripts.
+        </li>
+        <li>
+            console.time()/console.timeEnd() &rarr; Measures how long a block of code takes to run.
+        </li>
+        <li>
+            console.assert() &rarr; Logs an error only if a condition is false.
+            <br> ✅ Useful for quick tests or validations.
+        </li>
+        <li>
+            console.trace() &rarr; Prints a stack trace (shows the path your code took to reach that point).
+            <br> ✅ Helps find which function or line triggered the call.
+        </li>
+        <li>
+            console.dir() &rarr; Displays an interactive list of an objects's properties (especially for DOM elements).
+        </li>
+        <li>
+            console.debug() &rarr; Works like log() but usually hidden unless you enable Verbose Logging in your DevTools.
+        </li>
+    </ol>
+
+    <div class="playground">
+        <h2>Console Playground 🧩</h2>
+        <p>Open your browser console ( <strong>Ctrl + Shift + I &rarr; Console tab</strong> )</p>
+
+        <div class="btn-container">
+            <button onclick="showLog()">console.log()</button>
+            <button onclick="showError()">console.error()</button>
+            <button onclick="showWarn()">console.warn()</button>
+            <button onclick="showInfo()">console.info()</button>
+            <button onclick="showTable()">console.table()</button>
+            <button onclick="showCount()">console.count()</button>
+            <button onclick="showGroup()">console.group()</button>
+            <button onclick="showTime()">console.time()</button>
+            <button onclick="showAssert()">console.assert()</button>
+            <button onclick="showTrace()">console.trace()</button>
+            <button onclick="showDir()">console.dir()</button>
+            <button onclick="clearConsole()">console.clear()</button>
+        </div>
+
+        <div class="practice-area">
+            <h2>Practice Console Commands</h2>
+            <p>Type your own JavaScript code below and run it!</p>
+            <textarea id="userCode" placeholder="Example: console.log('Hello World!')"></textarea>
+            <br>
+            <button onclick="runUserCode()">Run Code ▶</button>
+        </div>
+    </div>
+
+    <script>
+        // Predefined Console Examples
+        function showLog() {
+            console.log("This is a normal log message 😎");
+        }
+
+        function showError() {
+            console.error("Something went wrong ❌");
+        }
+
+        function showWarn() {
+            console.warn("This is just a warning ⚠");
+        }
+
+        function showInfo() {
+            console.info("Some useful information ℹ");
+        }
+
+        function showTable() {
+            const data = [
+                {
+                    name:"Ayo",
+                    skill:"HTML"
+                },
+                {
+                    name:"Blessing",
+                    skill:"CSS"
+                },
+                {
+                    name:"Bola",
+                    skill:"Python"
+                }
+            ];
+            console.table(data);
+        }
+
+        function showCount() {
+            console.count("Button Clicked!");
+        }
+
+        function showGroup() {
+            console.group("user info");
+            console.log("Name: Joy");
+            console.log("Age: 20");
+            console.groupEnd();   
+        }
+
+        function showTime() {
+            console.time("Timer");
+            for (let i = 0; i < 1000; i++){}
+            console.timeEnd("Timer"); 
+        }
+
+        function showAssert() {
+            let age = 15;
+            console.assert(age >= 18, "Age must be 18 or above ❗❗❗ 😠");
+        }
+
+        function showTrace() {
+            function step1() {
+                step2();
+            }
+
+            function step2() { 
+                console.trace("Tracing steps 👣");
+            }
+            step1();
+        }
+
+        function showDir() {
+            console.dir(document.body);
+        }
+
+        function clearConsole() {
+            console.clear();
+            console.log("Console cleared Successfully 🧹");  
+        }
+
+        // Run user code safely
+        function runUserCode() {
+            const code = document.getElementById("userCode").value;
+            try {
+                eval(code); // evalutes user code
+            } catch (error) {
+                console.error("Error in your code: ", error.message); 
+            }
+        }
+
+
+    </script>
+</body>
+</html>

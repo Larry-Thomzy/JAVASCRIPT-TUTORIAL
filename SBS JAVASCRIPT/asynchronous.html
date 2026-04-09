@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <p>JavaScript is single-threaded (executes one thing at a time).</p>
+    <p>But sometimes tasks (like fetching data, waiting for a timer, or reading a file) take time.</p>
+    <p>If JS waited for them, everything else will freeze.</p>       
+    <p>JS uses Asynchronous programming to run long task without blocking other code.</p>
+    <h2>Why Async is useful in JavaScript</h2>
+    <p>Async Js is super important in real world project because it helps your app remain fast, responsive, and efficient instead of freezing while waiting for task to finish loading.</p>
+    <p>Async allows other tasks (like UI Interactions)to keep running. Without Async, If one task is slow (like fetching data), everything else stops.</p>
+    <p>It improves performance - instead of waiting for one task to finish, multiple things can happen at the same time.</p>
+    <h3>Summary - Users don't want apps that freeze while loading. Async makes apps smooth.</h3>
+
+    <ol>
+        <li>
+          <h3>setTimeout()</h3>
+          <p>Runs a function once after a given time (in miliseconds). Run once after delay.</p>  
+        </li>
+
+        <li>
+            <h3>setInterval()</h3>
+            <p>Runs a function repeatedly after a given interval.</p>
+        </li>
+
+        <li>
+            <h3>Promises</h3>
+            <p>A promise represents a value that will be available now, later, or never.</p>
+            <p>A promise in Js is like a contract. It says, "I promise to give you a result in the future". The result can be either success (resolved) or failure (rejected)</p>
+            <ul>
+                <li>Three states:
+                    <ul>
+                        <li>Pending(waiting).</li>
+                        <li>Fulfilled(resolved, success).</li>
+                        <li>Rejected(Failed, error).</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>Async/Await</h3>
+            <p>Async/Await is syntactic sugar used on top of promises.</p>
+            <p>It makes Asynchronous code looks synchronous, making it easier to read and write</p>
+            <h4>The Async keyword declares a function as asynchronous. An Async function always returns a promise, even if you return a normal value</h4>
+            <h4>The Await keyword can only be used inside an Async function. It pauses the execution until the promise is resolved or rejected</h4>
+        </li>
+
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+    <script>
+        // EXAMPLE 1: SET TIMEOUT()
+        console.log("start");
+        setTimeout(() => {
+            console.log("This code runs after 2s");
+        },2000);
+        console.log("end");
+        
+        // EXAMPLE 2: SET INTERVAL()
+        let count = 0;
+        let timer = setInterval(() => {
+            count++;
+            console.log("count:", count);
+            
+            if (count === 5) {
+                clearInterval(timer); // Stop after 5
+            }
+        }, 1000);
+
+        // EXAMPLE 3: PROMISES
+        // creating a promise:
+        let myPromise = new Promise((resolve, reject) => {
+            let success = false; // just a condition to decide whether the promise should succeed or fail
+
+            if (success) {
+                resolve("promise resolved")
+            }else {
+                reject("promise rejected")
+            }
+        });
+
+        myPromise
+        .then(result => console.log(result)) // success handler
+        .catch(error => console.log(error)) // error handler
+
+        // chaining promises
+        let getNumber = new Promise((resolve) => {
+            setTimeout(() => resolve(5), 1000) // after 1s, the promise becomes resolved with value 5
+        });
+        getNumber
+        .then(num => {
+            console.log("Number:", num);
+            return num * 2;
+        })
+        .then(double => {
+            console.log("Doubled:", double);
+            return double + 3;
+        })
+        .then(result => console.log("Final Result:", result))
+        .catch(error => console.log(error));   
+
+        // EXAMPLE 4: Async/Await
+        function fetchData() {
+            return new Promise(resolve => {
+                setTimeout(() => resolve("Data Fetched ✅"), 2000)
+            });
+        }
+        // Declaring a function with asyn means you can use await inside it. await pauses the function until the promise from fetchData is resolved
+        async function getData() {
+            console.log("Fetching...");
+            let data = await fetchData(); // waits until resolved
+            console.log(data);
+            console.log("Done!");
+        }
+        getData();
+
+    </script>
+</body>
+</html>

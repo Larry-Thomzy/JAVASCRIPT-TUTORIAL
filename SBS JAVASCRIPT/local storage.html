@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+    <p>Local Storage is a way to store data in a web browser.</p>
+    <p>It allows web apps to save key-value pairs persistently (data stays even after refreshing or closing the browser).</p>
+    <p>Stored data has no expiration date (unlike session storage or cookies).</p>
+    <h2>📌 Features:</h2>
+    <ol>
+        <li>Size limit is about 5mb per domain (varies by browser).</li>
+        <li>Data is specific to a domain (one site cannot access another site's data).</li>
+        <li>Data remains manually cleared by developer or user.</li>
+    </ol>
+    <h2>setItem()</h2>
+    <p>setItem() is a method used to store data in local storage as a key-value pair.</p>
+    <ul>
+        <li>key &rarr; The name (string).</li>
+        <li>value &rarr; The data (string).</li>
+    </ul>
+
+    <script>
+        // MAIN METHODS
+        // 1. SAVE DATA
+        localStorage.setItem("name", "Ore");
+        localStorage.setItem("hobbies", "Watching Movies");
+        localStorage.setItem("skills", "HTML, CSS, Js");
+
+        // 2. GET DATA
+        let username = localStorage.getItem("name");
+        console.log(username);
+        
+        // 3. REMOVE A SINGLE ITEM
+
+        localStorage.removeItem("name");
+
+        // 4. CLEAR ALL DATA
+        localStorage.clear()
+        console.log(localStorage);
+
+        // 5. CHECK HOW MANY ITEMS STORED 
+        console.log(localStorage.length);
+        
+        
+
+    </script>
+</body>
+</html>

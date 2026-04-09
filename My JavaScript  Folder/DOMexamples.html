@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-decoration: underline;
+            color: aqua;
+        }
+        .highlight {
+            font-size: 24px;
+            text-decoration: overline;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Examples</h1>
+
+    <div class="example1">
+        <h2 id="title">Hello Everyone</h2>
+        <p class="text">This is a paragraph</p>
+        <p class="text">Another paragraph</p>
+    </div>
+
+    <div class="example2">
+        <h2 id="header">Welcome</h2>
+        <button id="btn">Click to change text</button>
+        <p id="x">yoo what up</p>
+    </div>
+
+    <div class="example3">
+        <button onclick="alert('This button has been clicked')">Click Me</button>
+    </div>
+
+    <div class="example4">
+        <button id="btn2">Howdy amigo</button>
+    </div>
+
+    <div class="example5">
+        <button id="btn3">So damn tired</button>
+    </div>
+
+    <script>
+            // Select by id
+            let heading = document.getElementById("title");
+            heading.style.color = "red";
+            heading.style.background = "orange";
+
+            // select by class
+            let p = document.getElementsByClassName("text");
+            p[0].style.color = "green";
+            p[1].style.background = "pink";
+            p[0].style.textDecoration = "line-through";
+
+            // Select using querySelector
+            let firstP = document.querySelector(".text");
+            firstP.style.fontStyle = "italic";
+
+            // Select using querySelectorAll
+            let allP = document.querySelectorAll(".text");
+            allP.forEach(p => p.style.border = "1px solid");
+
+
+
+            // EXAMPLE 2
+            let header = document.getElementById("header");
+            let button = document.getElementById("btn");
+            button.onclick = function () {
+                header.textContent = "Hello, DOM Manipulation";
+                header.style.color = "green";
+                header.classList.add("highlight");
+            }
+
+            let x = document.getElementById("x")
+            textContent = "yoo what up";
+
+
+            // EXAMPLE 3
+            let btn = document.getElementById("btn2");
+            btn.onclick = function () {
+                alert("i can't let you in")
+            }
+
+            let btn3 = document.getElementById("btn3")
+            btn3.addEventListener("click", function() {
+                alert("Button clicked using addEventListener");
+            })
+    </script>
+</body>
+</html>

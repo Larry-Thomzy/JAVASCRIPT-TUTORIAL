@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        code{
+            background: #dedede;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM & Browser APIs &rarr; Fetch API</h1>
+    <p>The Fetch API is how we get (or send) data from/to a server.</p>
+    <p>It returns a promise, which means the data isn't available instantly - we have to wait for it to load.</p>
+    <p>fetch() - is a built-in javascript function used to make HTTP requests (GET, POST, PUT, DELETE etc.) from the browser.</p>
+    <p>It returns a promise that resolves to a response object</p>
+    <h3> 📌 Basic Syntax</h3>
+    <code>
+        fetch(url, options)
+        .then(response => {
+        <!-- Handle the response -->
+        })
+        .catch(error => {
+        <!-- Handle errors -->
+        })
+        
+    </code>
+    <ul>
+            <li>url &rarr; The API endpoint </li>
+            <li>options &rarr; An object (optional) that specifies the request method, header, body etc.</li>
+        </ul>
+
+        <script>
+            // EXAMPLE 1: FETCH EXAMPLE (GET REQUEST)
+            // EXAMPLE: FETCH A RANDOM JOKE
+            fetch("https://official-joke-api.appspot.com/random_joke")
+            .then(response => response.text())
+            .then(data => {
+                console.log("Raw Response:", data);
+            })
+            .catch(error => console.error("Error:", error));
+        </script>
+</body>
+</html>   

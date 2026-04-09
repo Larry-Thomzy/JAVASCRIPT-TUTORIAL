@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script reflect</title>
+</head>
+<body>
+    <h1>The Reflect Object</h1>
+    <p>
+        Reflect is an object with methods for low level operations on javascript object.
+    </p>
+    <p>
+        With the Reflect object you can get, set, delete and check object properties in a consistent way
+    </p>
+    <h2>
+        Why Reflect ?
+    </h2>
+    <p>
+        Reflect is safe and flexible expecially when used inside a proxy 
+    </p>
+
+    <script>
+        // Reflect.has() method checks if an object has a specific property
+
+        // The Reflect.has() method is similar to the in operator
+
+        const person = {
+            name:"John",
+            lastname:"Wick"
+        };
+
+        let ans = Reflect.has(person,"age");
+        console.log(ans);
+
+        // Reflect.deleteProperty()
+
+        // The Reflect.deleteProperty() method delete a property from an object
+
+        const person2 = {
+            name: "Sarah",
+            lastname: "Williams"
+        };
+
+        let ans2 = Reflect.deleteProperty(person2,"lastname");
+        console.log(person2.lastname)
+
+        // Reflect.get()
+
+        // The Reflect.get() method retrives the value of a property
+
+        const user = {
+            name:"Jenet",
+            age: 40
+        };
+
+        let age = Reflect.get(user,"age");
+        console.log(age);
+
+
+        // Reflect.set()
+
+        // The Reflect.set() method set the value of a property
+
+        const user2 = {
+            name: "James",
+            age: 72
+        };
+
+        Reflect.set(user2,"age",41);
+        let age2 = Reflect.get(user2,"age");
+        console.log(age2);
+
+        // Reflect.apply()
+
+        // The Reflect.apply() method calls a function with a this value and an argument array
+
+        function greet (message) {
+            return message + ", " + this.name;
+        }
+
+        const person3 = {
+            name: "craig"
+        }
+
+        let msg = Reflect.apply(greet, person3, ["I love you"])
+        console.log(msg);
+    </script>
+</body>
+</html>

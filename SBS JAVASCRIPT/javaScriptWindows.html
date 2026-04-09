@@ -1,0 +1,97 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+        text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🌐 Javascript Window & BOM</h1>
+    <h2>BOM</h2>
+    <p>BOM (Browser Object Model) allows Javascript to interact with the browser (not the webpage itself - that's the DOM).</p>
+    <p>It represent browser features like:</p>
+    <ol>
+        <li>Window</li>
+        <li>Navigator</li>
+        <li>Location</li>
+        <li>History</li>
+        <li>Screen</li>
+    </ol>
+    <h2>Window Object</h2>
+    <p>The window object is the global object in the browser. It's represent the browsers window.</p>
+    <p>All Javascript objects, functions and variables automatically become members of the window object.</p>
+    <h2>Common Window Methods.</h2>
+    <ol>
+        <li>alert() - Displays a message box.</li>
+        <li>confirm() - Asks for confirmation (OK/CANCEL).</li>
+        <li>prompt() - Input box.</li>
+        <li>setTimeOut() - Runs code after delay (once).</li>
+        <li>setInterval() - Runs code repeatedly at intervals.</li>
+    </ol>
+    <h2>Location Object (window.location)</h2>
+    <p>It controls the url of the current page.</p>
+
+    <h2>History Object (window.history).</h2>
+    <p>Controls browser history (back/forward).</p>
+
+    <h2>Navigator Object (window.navigator).</h2>
+    <p>It gives info about the browser.</p>
+
+    <script>
+        console.log(window); // shows all methods and properties of the window.
+
+        // The Two properties can be used to determine the size of the browser window.
+        console.log(window.innerWidth); // width of window.
+        console.log(window.innerHeight); // height of window.
+
+        // 1. Alert()
+        alert("Welcome To BOM!");
+        
+        // 2. Confirm()
+        let answer = confirm("Do you Wish To Continue?");
+        console.log(answer);
+
+        // 3. Prompt()
+        let name = prompt("Enter Your Name:");
+        console.log("Hello", name);
+        
+        // 4. setTimeOut()
+        setTimeout(() => {
+            console.log("Runs after 5 seconds ⌛");
+        }, 5000);
+
+        // 5. setInterval()
+        setInterval(() => {
+            console.log("Repeating every 2 seconds 🔂");
+            
+        }, 2000)
+        
+        // Location object
+        console.log(location.href); // full url
+        console.log(location.hostname); // domain
+        console.log(location.pathname); // page path
+        
+        // history object
+        history.back(); // go back
+        history.forward(); // go forward
+
+        // other window methods
+        window.open(); // to open a new window
+        // window.close(); // to close the current window
+        window.moveTo(); // to move the current window
+        window.resizeTo(); // to resize the current window
+
+        // Navigator object
+        console.log(navigator.userAgent); // browser info
+        console.log(navigator.language); // language
+        console.log(navigator.onLine); // true if online. false if offline
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOPS</title>
+</head>
+<body>
+    <h1>LOOPS</h1>
+    <h3>Types of Loops</h3>
+
+    <ul>
+        <li>while loop</li>
+        <li>do-while loop</li>
+        <li>for loop</li>
+    </ul>
+
+    <p>We often need to repeat actions.</p>
+    <p>For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.</p>
+
+    <p><strong>WHILE LOOP:</strong>While the condition is true, the code from the loop body is executed.</p>
+    <p>The while loop has the following the syntax:</p>
+
+    <pre>
+        while (condition) {
+            // code
+            // so-called "loop body"
+        }
+    </pre>
+
+    <p>For instance, the loop below outputs i while i < 3:</p>
+    <pre>
+        let i = 0;
+        while (i < 3) { // shows 0, then 1, then 2
+            alert(i);
+            i++;
+        }
+    </pre>
+
+    <p>A single execution of the loop body is called an iteration. The loop in the example above makes three iterations.</p>
+    <p>If i++ was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.</p>
+    <p>Any expression or variable can be a loop condition, not just comparisons: the condition is evaluated and converted to a boolean by while.</p>
+
+    <pre>
+        let i = 3;
+        while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
+            alert( i );
+            i--;
+        }
+    </pre>
+
+    <h4>The “do…while” loop</h4>
+    <p>The loop will first execute the body, then check the condition, and, while it’s truthy, execute it again and again.</p>
+    <pre>
+            do {
+                // loop body
+            } while (condition);
+    </pre>
+
+    <p>The condition check can be moved below the loop body using the do..while syntax:</p>
+    <p>The loop will first execute the body, then check the condition, and, while it’s truthy, execute it again and again.</p>
+    <p>For example:</p>
+    <pre>
+        let i = 0;
+        do {
+            alert( i );
+            i++;
+        } while (i < 3);
+    </pre>
+
+    <h4>The “for” loop</h4>
+    <p>The for loop is more complex, but it’s also the most commonly used loop.</p>
+    <p>It looks like this:</p>
+
+    <pre>
+            for (begin; condition; step) {
+                // ... loop body ...
+            }
+    </pre>
+
+    <p>Example:</p>
+
+    <pre>
+        for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+            alert(i);
+        }
+    </pre>
+
+    <p>Let’s examine the for statement part-by-part:</p>
+
+    <table border="2">
+        <tr>
+            <td>begin</td>
+            <td>let i = 0</td>
+            <td>Executes once upon entering the loop.</td>
+        </tr>
+
+        <tr>
+            <td>condition</td>
+            <td>i < 3</td>
+            <td>Checked before every loop iteration. If false, the loop stops.</td>
+        </tr>
+
+        <tr>
+            <td>body</td>
+            <td>alert(i)</td>
+            <td>Runs again and again while the condition is truthy.</td>
+        </tr>
+
+          <tr>
+            <td>step</td>
+            <td>i++</td>
+            <td>Executes after the body on each iteration.</td>
+        </tr>
+    </table>
+
+</body>
+</html>

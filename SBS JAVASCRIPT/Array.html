@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays 🎀</h1>
+    <p>An array is a special type of object used to  store multiple values in a single variable.</p>
+    <p>Arrays are ordered, meaning each value has an index (Starting from 0). <br> Arrays are best for list of values.</p>
+
+    <script>
+        let pets = ["cub", "parrot", "monkey", "duck",]
+        console.log(pets[0]); // cub
+        console.log(pets[3]); // duck
+        
+
+        // adding to an array
+        pets.push("puppy");
+        console.log(pets);
+        
+        
+        // remove from an array
+        pets.pop()
+        console.log(pets);
+
+        //Why use array
+        //instesd of doing this
+        let color1 = "red";
+        let color2 = "blue";
+        let color3 = "green";
+
+        //Do this instead
+        let colors = ["red", "blue", "green"];
+        //and access than easily
+
+
+        // changing an item
+        color[1] = "black";
+        console.log(colors);
+
+        // to know how many items qin an array
+        console.log(colors.length);
+
+        pets.unshift("cat") //adds to the beginning 
+        pets.shift() //remove from the beginning 
+
+        //looping through the Arrays
+        for (let i = 0; i < pets.length; i++) {
+            console.log(pets[1]);
+            
+        }
+        
+    </script>
+</body>
+</html>

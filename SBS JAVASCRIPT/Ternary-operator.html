@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ternary Operator.</h1>
+    <p>The Ternary Operator is a short form of an if-else statement.</p>
+    <p>It is called ternary because it takes three operands:</p>
+    <code>condition ? expressionIfTrue: expressionIfFalse</code>
+    <ul>
+        <li>condition &rarr; what you are checking (must be true or false).</li>
+        <li>expressionIfTrue &rarr; what runs if the condition is true.</li>
+        <li>expressionIfFalse &rarr; what runs if the condition is false.</li>
+    </ul>
+
+    <script>
+        // EXAMPLE 1: SIMPLE CHECK
+        let age = 18;
+        let result = (age >= 18)? "Adult ✅" : "Minor ❌"
+        console.log(result);
+
+        // THE REGULAR IF-ELSE
+        let age2 = 20;
+        if (age2 >= 19) {
+            result = "You are an Adult"
+        }else {
+            result = "You are a Minor"
+        }
+
+        // EXAMPLE 2:
+        let isLoggedIn = true;
+        console.log(isLoggedIn ? "Welcome Back 🎉" : "Please Log in 🔑");
+        
+        // EXAMPLE 3: YOU CAN CALL FUNCTION INSIDE
+        function greet() {
+            console.log("hello class 👋 ");
+        }
+        function farewell() {
+            console.log("goodbye");
+            
+        }
+        let isMorning = false;
+        isMorning ? greet(): farewell() 
+
+        //Example 4: you can insert tenaries directly into strings
+        let LoggedIn = false;
+        let userName = "AWWALU world wide";
+        console.log(`Welcome ${LoggedIn ? userName: "guest"}!`);
+        
+
+        //EXAMPLE 5:
+        let role = "admin";
+        let access = role === "admin" ? "Full access 🔑🔑🔑🔑" : 
+        role === "user" ? "Limited access 😂😂😂😂😂" :
+        "NO access 🚫"
+        console.log(access);
+        
+    </script>
+</body>
+</html>

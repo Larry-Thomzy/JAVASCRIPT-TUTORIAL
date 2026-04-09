@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>📌 Object</h2>
+    <p>Objects in JavaScript, are collections of related
+        data.
+    </p>
+    <p>Objects are collections of key-value pairs,
+        where each key (also called a property) is a
+        string and the value can  be anything 
+        (string, number, array, function, 
+        and even another object).
+    </p>
+    <ul>
+        <li>An object is a stand-alone entity with 
+            properties and methods.
+        </li>
+        <li>They help describe real world things.</li>
+    </ul>
+    <ol>
+        <li>Object Basics: Syntax (Object literal).</li>
+        <li>Accessing Object Properties: Dot Notation.</li>
+        <li>Adding and Updating Properties.</li>
+        <li>Deleting Properties.</li>
+        <li>Objects with Methods - functions inside objects are called methods.</li>
+        <li>Nested Object: Objects inside objects.</li>
+        <li>Objects Constructors - A constructor is a blueprint for creating objects.</li>
+        <li>Prototypes - Evey Js object has a prototype (like an inheritance system). Methods on the prototype are shared across instances.</li>
+    </ol>
+
+    <script>
+        // EXAMPLE 1: OBJECT BASICS
+        let person = {
+            name: "basit",
+            age: 11,
+            isStudent: true,
+        }; 
+        // name, age, isStudent - these are your keys (properties).
+        // basit, 11, true - these are your values
+
+        // EXAMPLE 2: DOT NOTATION
+        console.log(person.name);
+        console.log(person.age);
+        console.log(person.isStudent);
+        // Or Bracket Notation
+        console.log(person["age"]);
+        
+        // EXAMPLE 3: ADDING AND UPDATING PROPERTIES
+        person.hobby = "Making Money"; // add new property
+        person.age = 14; // update existing property
+        console.log(person);
+        
+        // EXAMPLE 4: DELETING PROPERTIES
+        delete person.isStudent;
+        console.log(person);
+        
+        // EXAMPLE 5: OBJECTS WITH METHODS
+        let car = {
+            brand: "benz", 
+            start: function () {
+                return "car has started!";
+            }
+        }
+        console.log(car.start())
+        
+        // EXAMPLE 6: NESTED OBJECTS
+        let student = {
+            name: "Ore",
+            grades: {
+                Math: 90,
+                English: 85
+            }
+        };
+        console.log(student.grades.Math);
+        console.log(student.grades.English);
+        
+        // EXAMPLE 7
+        function person2(name, age) {
+            this.name = name; // Assigns the value passed in to a property called name.
+            this.age = age; // Assigns the value passed in to a property called age.
+        }
+        let p1 = new person2("Ahmid", 10);
+        console.log(p1.name);
+        console.log(p1.age);
+        
+        
+        // this - is a constructor function. we use it to set properties.
+        // New - The key word new does four things under the hood:
+        // 1. It creates an empty object - {}
+        // 2. It sets the prototype of that object to person.prototype.
+        // 3. It calls the person function with this bound to the new object.
+        // 4. It returns the new object
+        
+        // EXAMPLE 8: PROTOTYPE
+        person2.prototype.sayHello = function(){
+            return `Hello, My name is ${this.name}`;
+        };
+        console.log(p1.sayHello());
+        
+        
+        
+    </script>
+</body>
+</html>

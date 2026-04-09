@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Concatenation</h1>
+    <p>String concatenation means joining two or more strings together</p>
+    <h2>Ways to concatenate strings</h2>
+    <ol>
+        <li>Using the plus (+) operator</li>
+        <li>Using the plus and equal to (+=) operator </li>
+        <li>Used to add and assign at the same time.</li>
+        <li>Using templates literals (recommended)</li>
+    </ol>
+
+    <script>
+        let firstName = "butcher ";
+        let secondName = "sammie ";
+        let middleName = "fright ";
+        let fullName = firstName + secondName + middleName;
+        console.log(fullName);
+
+        // using + operator
+        let greeting = "Hello " + "World";
+        console.log(greeting);
+        
+        // Using += operator
+        let text = "lolz bruh ";
+        text += "JavaScripot";
+        console.log(text);
+
+        // Using template literals
+        let name = "fright";
+        let language = "python"
+        console.log(`Hi ${name}, Welcome to ${language}`);
+
+        let myName = "butcher"
+        console.log(`hello ${myName}`);
+
+        let food = "rice"
+        let drink = "apple juice"
+        console.log(`i ate ${food} and drank ${drink}`);
+    </script>
+</body>
+</html>

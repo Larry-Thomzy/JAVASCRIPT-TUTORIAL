@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOL</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log("Larry Page was here");
+
+        const fruits = [
+            ["apples", 300],
+            ["bananas", 200],
+            ["pears", 100]
+        ];
+
+        const myObj = Object.fromEntries(fruits); // Converts array of key-value pairs into an object
+        console.log(myObj);
+
+        let descriptor = Object.getOwnPropertyDescriptor(myObj, "bananas");
+        console.log(descriptor);
+    </script>
+</body>
+</html>

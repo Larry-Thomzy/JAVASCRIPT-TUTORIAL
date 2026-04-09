@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Classes</title>
+</head>
+<body>
+
+    <h1>JavaScript Classes</h1>
+
+    <h2>Definition</h2>
+    <p>
+        A <strong>class</strong> in JavaScript is a blueprint for creating objects.
+        It defines the <em>properties</em> (data) and <em>methods</em> (behavior)
+        that the objects created from it will have.
+    </p>
+
+    <p>
+        Classes were introduced in ES6 and provide a cleaner, more structured
+        syntax over JavaScript’s prototype-based inheritance.
+    </p>
+
+    <h2>Basic Syntax</h2>
+
+    <pre>
+            class Person {
+                constructor(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+
+                greet() {
+                    return "Hello, my name is " + this.name;
+                }
+            }
+
+            let user = new Person("John", 25);
+    </pre>
+
+    <h2>Usefulness of Classes</h2>
+
+    <ul>
+        <li>
+            <strong>Code organization:</strong> Groups related data and behavior together.
+        </li>
+        <li>
+            <strong>Reusability:</strong> Create multiple objects from the same blueprint.
+        </li>
+        <li>
+            <strong>Maintainability:</strong> Easier to read, debug, and extend.
+        </li>
+        <li>
+            <strong>Abstraction:</strong> Hides internal details and exposes only what is needed.
+        </li>
+        <li>
+            <strong>Supports OOP concepts:</strong> Encapsulation, inheritance, and polymorphism.
+        </li>
+    </ul>
+
+    <h2>Constructor</h2>
+    <p>
+        The <code>constructor</code> is a special method that runs automatically
+        when a new object is created from the class.
+    </p>
+
+    <pre>
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+    </pre>
+
+    <h2>Methods</h2>
+    <p>
+        Methods are functions defined inside a class.
+        They describe what the object can do.
+    </p>
+
+    <pre>
+        greet() {
+            return "Hello";
+        }
+    </pre>
+
+    <h2>Inheritance</h2>
+    <p>
+        Classes can inherit properties and methods from other classes using
+        the <code>extends</code> keyword.
+    </p>
+
+    <pre>
+        class Student extends Person {
+            constructor(name, age, course) {
+                super(name, age);
+                this.course = course;
+            }
+        }
+    </pre>
+
+    <h2>Static Methods</h2>
+    <p>
+        Static methods belong to the class itself, not to instances of the class.
+    </p>
+
+    <pre>
+        static info() {
+            return "This is a Person class";
+        }
+    </pre>
+
+    <h2>Getters and Setters</h2>
+    <p>
+        Getters and setters allow controlled access to object properties.
+    </p>
+
+    <pre>
+        get age() {
+            return this._age;
+        }
+
+        set age(value) {
+            if (value > 0) {
+                this._age = value;
+            }
+        }
+    </pre>
+
+    <h2>Important Notes</h2>
+
+    <ul>
+        <li>Classes are <strong>syntactic sugar</strong> over JavaScript prototypes.</li>
+        <li>Methods are stored on the prototype, not duplicated per object.</li>
+        <li>You must use <code>new</code> to create an instance of a class.</li>
+    </ul>
+
+    <h2>Summary</h2>
+    <p>
+        JavaScript classes provide a structured and readable way to create
+        objects, making large applications easier to design, understand,
+        and maintain.
+    </p>
+
+    <p>
+        <strong>IN JAVASCRIPT, A CLASS IS A SPECIAL TYPE OF FUNCTION.
+            BUT IT IS A DIFFERENT KIND OF FUNCTION FROM THE ONES YOU NORMALLY WRITE.
+        </strong>
+    </p>
+
+    <script>
+        class User {
+
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayHi() {
+            alert(this.name);
+        }
+
+        }
+
+        // Usage:
+        let user = new User("John");
+        user.sayHi();
+
+
+        class User2 {
+            constructor(name) 
+                { 
+                    this.name = name; 
+                }
+                
+            sayHi() 
+                { 
+                    alert(this.name); 
+                }
+        }
+
+        // proof: User is a function
+        alert(typeof User2); // function
+
+        let User3 = class {
+            sayHi() {
+                alert("Hello");
+            }
+        };
+
+        let User4 = class MyClass {
+            sayHi() {
+                alert("MyClass"); // MyClass name is visible only inside the class
+            }
+        };
+
+        new User4().sayHi(); // works, shows MyClass definition
+
+        //alert(MyClass); // error, MyClass name isn't visible outside of the class
+
+        
+        
+        
+        class Users {
+
+        constructor(name) {
+            // invokes the setter
+            this.name = name;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            if (value.length < 4) {
+            alert("Name is too short.");
+            return;
+            }
+            this._name = value;
+        }
+
+        }
+
+        let users = new User("Craig");
+        alert(users.name); // Craig
+
+        user = new User(""); // Name is too short.
+
+
+
+
+    </script>
+
+</body>
+</html>
