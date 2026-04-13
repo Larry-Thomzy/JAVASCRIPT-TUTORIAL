@@ -3,6 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOOPS</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <h1>LOOPS</h1>
@@ -87,7 +92,7 @@
 
     <p>Let’s examine the for statement part-by-part:</p>
 
-    <table border="2">
+    <table border="2" cellpadding="10" cellspacing="0">
         <tr>
             <td>begin</td>
             <td>let i = 0</td>
@@ -106,12 +111,67 @@
             <td>Runs again and again while the condition is truthy.</td>
         </tr>
 
-          <tr>
+        <tr>
             <td>step</td>
             <td>i++</td>
             <td>Executes after the body on each iteration.</td>
         </tr>
     </table>
+
+    <p>That is, begin executes once, and then it iterates: after each condition test, body and step are executed.</p>
+
+    <h4>Breaking the loop</h4>
+    <p>Normally, a loop exits when its condition becomes falsy.</p>
+    <p>But we can force the exit at any time using the special break directive.</p>
+    <p>For example, the loop below asks the user for a series of numbers, “breaking” when no number is entered:</p>
+
+    <pre>
+        let sum = 0;
+
+        while (true) {
+
+            let value = +prompt("Enter a number", '');
+
+            if (!value) break; // (*)
+
+            sum += value;
+
+        }
+        alert( 'Sum: ' + sum );
+    </pre>
+
+    <h4>Continuing with CONTINUE</h4>
+    <p>The continue directive is a a lighter version break and also a way to skip the rest of the current iteration and move to the next one.</p>
+    <p>It does not terminate the loop, but rather jumps to the next iteration.</p>
+    <p>For example, the loop below outputs only odd numbers using <STRong>CONTINUE</STRong>:</p>
+    <pre>
+        for (let i = 0; i < 10; i++) {
+
+            // if true, skip the remaining part of the body and continue with the next iteration
+            if (i % 2 == 0) continue;
+            alert(i); // 1, then 3, then 5, then 7, then 9
+        }
+    </pre>
+
+    <p>NOTE: we can break out of a nested loop from the inner loop by giving the outer loop a label:</p>
+
+    <pre>
+        outer: for (let i = 0; i < 3; i++) {
+
+                for (let j = 0; j < 3; j++) {
+
+                    let input = prompt(`Value at coords (${i},${j})`, '');
+
+                    // if an empty string or canceled, then break out of both loops
+                    if (!input) break outer; // (*)
+
+                    // do something with the value...
+                }
+        }
+        alert('Done!');
+    </pre>
+
+    <p>In the code above, break outer looks upwards for the label named outer and breaks out of that loop.</p>
 
 </body>
 </html>

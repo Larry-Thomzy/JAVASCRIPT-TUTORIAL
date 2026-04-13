@@ -6,6 +6,60 @@
   <title>Switch Example</title>
 </head>
 <body>
+  <h1>The "switch" statement</h1>
+  <p>A switch statement can replace multiple if checks.</p>
+  <p>It gives a more descriptive way to compare a value with multiple variants.</p>
+
+  <h2>The syntax</h2>
+
+  <pre>
+      switch(x) {
+        case 'value1':  // if (x === 'value1')
+          ...
+          [break]
+
+        case 'value2':  // if (x === 'value2')
+          ...
+          [break]
+
+        default:
+          ...
+          [break]
+    }
+  </pre>
+
+  <h2>Grouping of “case”</h2>
+
+  <p>  Several variants of case which share the same code can be grouped.</p>
+  <p>For example, if we want the same code to run for case 3 and case 5:</p>
+
+  <pre>
+      let a = 3;
+
+    switch (a) {
+      case 4:
+        alert('Right!');
+        break;
+
+      case 3: // (*) grouped two cases
+      case 5:
+        alert('Wrong!');
+        alert("Why don't you take a math class?");
+        break;
+
+      default:
+        alert('The result is strange. Really.');
+    }
+  </pre>
+
+  <p>Now both 3 and 5 show the same message.</p>
+
+
+
+
+
+
+
   <script>
     let day = prompt("Enter a day of the week (e.g., Monday, Friday, Sunday):");
 

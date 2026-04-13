@@ -70,12 +70,205 @@
         (they define what kind of data the function expects).
     </p>
     <p>Arguments are the actual values passed to the Parameters when they call it.</p>
+
+
+
+    <h2>Function Declaration</h2>
+    <p>To create a function we can use a function declaration.</p>
+    <p>It looks like this:</p>
+    <pre>
+            function showMessage() {
+                alert( 'Hello everyone!' );
+            }
+    </pre>
+
+    <p>
+        The function keyword goes first, then goes the name of the function, 
+        then a list of parameters between the parentheses (comma-separated, empty in the example above, 
+        we’ll see examples later) and finally the code of the function, also named “the function body”, between curly braces.
+    </p>
     
+    <pre>
+            function name(parameter1, parameter2, ... parameterN) {
+                // body
+            }
+    </pre>
+
+
+    <h2>Local variables</h2>
+    <p>A variable declared inside a function is only visible inside that function.</p>
+    <p>For example:</p>
+
+    <pre>
+            function showMessage() {
+                let message = "Hello, I'm JavaScript!"; // local variable
+                alert( message );
+            }
+
+            showMessage(); // Hello, I'm JavaScript!
+            alert( message ); // <-- Error! The variable is local to the function
+    </pre>
+
+    <h2>Outer variables</h2>
+    <p>A function can access outer variables. For example:</p>
+    <pre>
+        let userName = 'John';
+
+        function showMessage() {
+            let message = 'Hello, ' + userName;
+            alert(message);
+        }
+
+        showMessage(); // Hello, John
+    </pre>
+
+    <p>The function has full access to the outer variable. It can modify it as well. For instance:</p>
+    <pre>
+            let userName = 'John';
+
+            function showMessage() {
+                userName = "Bob"; // (1) changed the outer variable
+                let message = 'Hello, ' + userName;
+                alert(message);
+            }
+
+            alert( userName ); // John before the function call
+            showMessage();
+            alert(userName ); // Bob, the value was modified by the function
+    </pre>
+
+    <p>The outer variable is only used if there’s no local one.</p>
+    <p>If a same-named variable is declared inside the function then it shadows/overrides the outer one. For instance, 
+        in the code below the function uses the local userName. The outer one is ignored:
+    </p>
+
+    <pre>
+            let userName = 'John';
+
+            function showMessage() {
+                let userName = "Bob"; // declare a local variable
+                let message = 'Hello, ' + userName; // Bob
+                alert(message);
+            }
+            // the function will create and use its own userName
+            showMessage();
+            alert( userName ); // John, unchanged, the function did not access the outer variable
+    </pre>
+
+    <h2>Parameters</h2>
+    <p>We can pass arbitrary data to functions using parameters.</p>
+    <p>In the example below, the function has two parameters: from and text.</p>
+
+    <pre>
+        function showMessage(from, text) { // parameters: from, text
+            alert(from + ': ' + text);
+        }
+        showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+        showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+    </pre>
+
+
+    <p>Here’s one more example: we have a variable from and pass it to the function. Please note: the function changes from, 
+        but the change is not seen outside, because a function always gets a copy of the value:</p>
+
+    <pre>
+        function showMessage(from, text) {
+            from = '*' + from + '*'; // make "from" look nicer
+            alert( from + ': ' + text );
+        }
+        let from = "Ann";
+        showMessage(from, "Hello"); // *Ann*: Hello
+        // the value of "from" is the same, the function modified a local copy
+        alert( from ); // Ann
+    </pre>
+
+    <p>When a value is passed as a function parameter, it’s also called an argument.</p>
+    <p>In other words, to put these terms straight:</p>
+    <ul>
+        <li>A parameter is the variable listed inside the parentheses in the function declaration (it’s a declaration time term).</li>
+        <li>An argument is the value that is passed to the function when it is called (it’s a call time term).</li>
+    </ul>
+
+    <h2>Default values</h2>
+    <p>If no value is passed to a parameter, it becomes undefined. We can provide a default value in the function declaration:</p>
+    <pre>
+            function showMessage(from, text = "no text given") {
+                alert( from + ": " + text );
+            }
+
+        showMessage("Ann"); // Ann: no text given
+    </pre>
+
+    <p>Now if the text parameter is not passed, it will get the value "no text given".</p>
+
+    <h2>Returning a value</h2>
+    <p>A function can return a value back into the calling code as the result.</p>
+    <p>The simplest example would be a function that sums two values:</p>
+
+    <pre>
+            function sum(a, b) {
+                return a + b;
+            }
+
+            let result = sum(1, 2);
+            alert( result ); // 3
+    </pre>
+
+    <p>There may be many occurrences of return in a single function. For instance:</p>
+
+    <pre>
+            function checkAge(age) {
+                if (age >= 18) {
+                    return true;
+                } else {
+                    return confirm('Do you have permission from your parents?');
+                }
+            }
+            let age = prompt('How old are you?', 18);
+
+            if ( checkAge(age) ) {
+                alert( 'Access granted' );
+            } else {
+                alert( 'Access denied' );
+            }
+    </pre>
+
+    <h2>Naming a function</h2>
+    <p>
+        Functions are actions. So their name is usually a verb. 
+        It should be brief, as accurate as possible and describe what the function does, 
+        so that someone reading the code gets an indication of what the function does.
+    </p>
+
+    <p>
+        It is a widespread practice to start a function with a verbal prefix which vaguely describes the action. 
+        There must be an agreement within the team on the meaning of the prefixes.
+    </p>
+
+    <p>For instance, functions that start with "show" usually show something.</p>
+    <p>Function starting with…</p>
+    <ul>
+        <li>"get..." - return a value,</li>
+        <li>"set..." - set a value,</li>
+        <li>"is..." - check a condition,</li>
+        <li>"calc…" – calculate something,</li>
+        <li>"create…" – create something,</li>
+        <li>"check…" – check something and return a boolean, etc.</li>
+    </ul>
+
     <script>
         // Named function
         function greet() {
             console.log("Good Afternoon Class");
         }
+
+        function showMessage(){
+            console.log("Hello Everyone");
+        }
+
+        showMessage();
+
+
         greet();
         greet();
         greet();
